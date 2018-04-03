@@ -255,7 +255,7 @@ The use of certain Lambertian characteristic properties as a visual reference fo
 
 	<div style="margin-right: 50px; margin-left: 50px;">
 		<h1 style="text-align: center; margin-bottom: 40px;"> Atmospheric Light Scattering Theory</h1>
-	</div>			
+		
 								    
 								    <b> Rayleigh Theory </b> 
 
@@ -267,7 +267,7 @@ The use of certain Lambertian characteristic properties as a visual reference fo
 <p> The criteria for Rayleigh scattering requires that particle sizes range from α = 0.1-1.0; creating a refractive index that is less than 1. This creates scatter properties (intensity, direction) that provide a uniform distribution across a medium comprised of shorter wavelengths, creating the blue color which is dominant in Earth’s atmosphere. This illumination effect created by Rayleigh scatter in Earth’s atmosphere is referred to as “diffuse sky radiation” which gives the sky its blue color, as it scatters light more heavily at shorter wavelengths (blue first, then green, and then red). It is also responsible for the Sun’s yellow hue (20). The sun’s light turns yellow/orange/red at sunset because as light travels far through the atmosphere, and the majority of blue and green wavelengths are scattered away before it reaches the human eye. </p>
 
 			      
-	</div>	
+	
 	
 <b> Mie Theory </b> 
 
@@ -288,9 +288,6 @@ A way to compare effects of Rayleigh and Mie scattering is to plot the degree of
 <p> In this plot, the 17 nm particle (α = 0.1) represents the minimum range (value of smallest possible particle) of particulate matter in the Rayleigh formula (19). The 170 nm particle (α = 1.0) represents the maximum range (value of the largest possible particle) of particulate matter of the Rayleigh formula. Note that the 170 nm curve is showing some variation as the scattering angle increases towards 180°. However, this function variation does not increase nor decrease or beyond a certain range, thus creating a uniform distribution of light in Earth’s atmosphere. The 1.7 µm particle (α = 10) shows a dramatic “ripple” effect in scattering as a function of reflectance angle. This oscillation interference is characteristic of Mie scattering, which is due to the complex interactions in result of refracted rays, particle size and varying reflectance properties. </p> 
 										       									       
  
-											      
-	</div>		
-<br>
 <h3 style="text-align: center; margin-bottom: 40px;"> Directional Light and the Observer</h3>
 	<div style="text-align: center;" style="margin-bottom: 40px; margin-top: 40px;">
 <p> A goal of lunar psychophysics is to apply the functions of atmospheric scattering to understand perceptual distortions by referencing the location of the light source and an object relative to the observer. This is because visibility can change based on the intensity and direction of light relative to the observer and further create inconsistencies in the visibility of an object’s surface features. Below is a conceptual illustration adapted from Nave (2005), showing perceptions of different hypothetical objects in the sky with different reflectance properties: Rayleigh (small particulate matter) and Mie (larger particulate matter). </p> 
@@ -299,7 +296,7 @@ A way to compare effects of Rayleigh and Mie scattering is to plot the degree of
 			    <img src="moon21.png" style="height: 412px; width: 598px; text-align: center;"> 
 													  
 <p> The two Rayleigh objects (blue dotted lines) objects illustrate a uniform distribution of reflectance that reaches the observer in a consistent, perceivable wavelength (blue) (20). The two Mie objects (black lines) illustrate two different examples of the characteristic inconsistencies of Mie scatter that vary based on an object’s location relative to the observer. The triangulated position of an object’s relative location to the Sun and the observer can result in the forward scattering of light off an object, causing backscatter (bottom left). Or, it can result in the distributed illuminance of the second object (top right) causing light to refract in a different direction that does not reach the observer; concealing the object almost completely. </p> 
-	</div>	
+	
 
    </div>
 
@@ -325,8 +322,6 @@ A way to compare effects of Rayleigh and Mie scattering is to plot the degree of
 This difference is due to the fundamental assumptions of Mie theory, and the transfer of these equations into VR simulations. Specifically, this is due to the complexity of particles sizes and shapes (non-spherical) in the lunar exosphere (13). This is not accounted for in Mie calculations, for it only considers spherical particles of various sizes to exist in the atmosphere; refer to section on Lunar Exosphere for a table representation of these differences (27). </p>
 
 
-	</div>			
-
    </div>
 
 </section>
@@ -351,12 +346,9 @@ The scattering equations have nested integrals that are impossible to solve anal
 
 											      In our case, the line segment is a ray from the VR camera through the atmosphere to a vertex (B). This vertex can take on any perspective in the environment. It can be part of the terrain, an object, part of the sky dome, part of a cloud, or even part of an object in space such as the Moon. If the ray passes through an atmosphere to get to the vertex, scattering needs to be calculated. Every ray should have two points defined that mark where the ray starts passing through the atmosphere and where it stops passing through the atmosphere. These points can be called A and B in the figure below (26). When the camera is inside the atmosphere, A is the camera's position. When the vertex is inside the atmosphere, B is the vertex's position. When either point is in space, we perform a sphere-intersection check to find out where the ray intersects the outer atmosphere, and then we make the intersection point A or B.</p> 
  
-
-	</div>	
 <img src="moon25.jpg" style="height: 117px; width: 500px; text-align: center;"> 
 	<div style="text-align: center;" style="margin-bottom: 40px; margin-top: 40px;">
 		
-	</div>	
 <p> Now that we have a line segment defined from point A → B, we want to approximate the integral that describes the atmospheric scattering across the segment length. In the figure above, five sample positions are selected and labeled points P 1 through P 5. Each (P) point represents a point in the atmosphere at which light scatters; light comes into the atmosphere from the sun, scatters at that point, and is reflected toward the camera in the VE. </p> 
  
 <p> Consider the point P 5, for example. Sunlight goes directly from the sun to P 5 in a straight line. Along that line the atmosphere scatters some of the light away from P 5. At P 5, some of this light is scattered directly toward the camera. As the light from P 5 travels to the camera, it is partially scattered away again. Another important detail is related to how the light scattering at the point P is modeled. Different particles in the atmosphere scatter light in different ways, hence the most common forms of scattering are Rayleigh and Mie scattering and extinction coefficients.</p>
@@ -387,9 +379,7 @@ The scattering equations have nested integrals that are impossible to solve anal
 
 <p> To scatter light reflected from a surface, such as the surface of a planet, you must take into account the fact that some of the reflected light will be scattered away on its way to the camera. In addition, extra light is scattered in from the atmosphere. Ie () is the amount of light emitted or reflected from a surface, and it is attenuated by an out-scattering factor. The sky is not a surface that can reflect or emit light, so only Iv () is needed to render the sky. Determining how much light is reflected or emitted by a surface is application-specific, but for reflected sunlight, you need to account for the out-scattering that takes place before the sunlight strikes the surface (that is, Is () x exp(-t(Pc Pb ,))), and use that as the color of the light when determining how much light the surface reflects (26). </p>
 
-								       
-	</div>	
-
+								      
 
 
    </div>
@@ -403,7 +393,7 @@ The scattering equations have nested integrals that are impossible to solve anal
 
 	<div style="margin-right: 50px; margin-left: 50px;">
 		<h1 style="text-align: center; margin-bottom: 40px;"> References</h1>
-	</div>			<br> 
+	
 <p> <b> References </b> </p>
 <p> Nagata, S. (1996). The binocular fusion of human vision on stereoscopic displays—field of view and environment effects. Ergonomics, 39(11), 1273-1284.</p>
 <p> Cutting, J. E. (1997). How the eye measures reality and virtual reality. Behavior Research Methods, Instruments & Computers, 29(1), 27-36. doi: 10.3758/bf03200563.</p>
@@ -429,8 +419,6 @@ The scattering equations have nested integrals that are impossible to solve anal
 <p> Helfenstein, P., Veverka, J., & Hillier, J. (1997). The lunar opposition effect: A test of alternative models. Icarus, 128(1), 2-14. </p>
 
 
-
-	</div>	
 
 
    </div>
