@@ -368,25 +368,25 @@ Consider the point P 5, for example. Sunlight goes directly from the sun to P 5 
 
 										       The 4 essential equations used to simulate atmospheric light scattering are below (26):</p> 
 
-<b> The Phase Function </b>		
+										       <p> <b> The Phase Function </b>	</p>	
 
 <img src="eq1.png.jpg" style="height: 80px; width: 500px; text-align: center;"> 
 										
 <p> The phase function describes how much light is scattered toward the direction of the camera based on the angle (the angle between the two green rays in figure above) and a constant g that affects the symmetry of the scattering. There are many different versions of the phase function. This one is an adaptation of the Henyey-Greenstein function used in Nishita et al. 1993. </p>
 				       
-<b> Out-Scattering Equation </b>
+									      <p> <b> Out-Scattering Equation </b> </p>
 
 <img src="eq2.jpg" style="height: 89px; width: 502px; text-align: center;"> 
 										       
 <p> The out-scattering equation is the inner integral. This part determines the "optical depth," or the average atmospheric density across the ray from point Pa to point Pb multiplied by the length of the ray. This is also called the "optical length" or "optical thickness." Think of it as a weighting factor based on how many air particles are in the path of the light along the ray. The rest of the equation is made up of constants, and they determine how much of the light those particles scatter away from the ray. </p>
 
-<b> In-Scattering Equation </b>	
+									<p> <b> In-Scattering Equation </b> </p> 
 
 <img src="eq3.png" style="height: 43px; width: 500px; text-align: center;"> 
 				
 <p> The in-scattering equation describes how much light is added to a ray through the atmosphere due to light scattering from the sun. For each point P along the ray from Pa to Pb , PPc is the ray from the point to the sun and PPa is the ray from the sample point to the camera. The out-scattering function determines how much light is scattered away along the two green rays seen in the geometric figure above. The remaining light is scaled by the phase function, the scattering constant, and the intensity of the sunlight, Is (). The sunlight intensity does not have to be dependent on wavelength, but this is where you would apply the color if you wanted to create an extraterrestrial planetary environment revolving around a different colored star. </p> 
 
-<b> Surface-Scattering Equation </b>
+									  <p> <b> Surface-Scattering Equation </b> </p> 
 
 <img src="eq4.png" style="height: 24px; width: 598px; text-align: center;"> 
 
