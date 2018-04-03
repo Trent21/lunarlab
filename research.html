@@ -342,15 +342,57 @@ This difference is due to the fundamental assumptions of Mie theory, and the tra
 	<div style="margin-right: 90px; margin-left: 90px;">
 		<h1 style="text-align: center; margin-bottom: 40px;"> Rendering Planetary Atmospheres</h1>
 	</div>			<br> 
+<p> To create a realistic, accurate representation of the visual effects of light scattering on Earth and the Moon, each of these VR models are further modified as needed by adjusting the following variables in Unity 3D: Rayleigh scatter/extinction coefficients, Mie Scatter/extinction coefficients, shaders, atmosphere height and density, sun elevation and intensity, density scale and height of terrain. 
+
+Rayleigh and Mie scatter/extinction coefficients are used to model the visual lighting effects for each type of VE based on the theoretical frameworks of light scattering supported in the literature (9,20). Adjustments were made to Rayleigh and Mie coefficients in Unity, as well as additional precomputed single-scattering equations to render different types of planetary atmospheres: Earth’s atmosphere (left), the lunar exosphere with CPLS properties (right), and a hypothetical rendering of an Earth-like atmosphere on the Moon (center). </p> 
+
 	<div style="text-align: center;" style="margin-bottom: 40px; margin-top: 40px;">
-		<img src="planet1.png" style="height: 930px; width: 880px; text-align: center;"> 
+		<img src="moon24.png" style="height: 113px; width: 598px; text-align: center;"> 
+<p> Generating an accurate visual representation of atmospheric scattering in computer graphics models (CGM) is challenging, and understanding these equations is crucial for rendering realistic environments. Since the equations used explain atmospheric light scattering are extremely complex, CGM models generally use simplified equations. 
+
+The scattering equations have nested integrals that are impossible to solve analytically. Fortunately, we can numerically compute the value of an integral with techniques such as the trapezoid rule, as suggested by O’Neil (2005) (26); who proposed the implementation of full scattering equations to model an atmosphere more accurately and at lower densities.  
+
+											      Using a line segment on a graph, one can break up the segment into n sample segments and evaluate the integrand at the center point of each sample segment. Then, multiply each result by the length of the sample segment and add them all up. Increasing the number of n samples makes the result more accurate, but it also makes the process of calculating the integral more taxing.
+
+											      In our case, the line segment is a ray from the VR camera through the atmosphere to a vertex (B). This vertex can take on any perspective in the environment. It can be part of the terrain, an object, part of the sky dome, part of a cloud, or even part of an object in space such as the Moon. If the ray passes through an atmosphere to get to the vertex, scattering needs to be calculated. Every ray should have two points defined that mark where the ray starts passing through the atmosphere and where it stops passing through the atmosphere. These points can be called A and B in the figure below (26). When the camera is inside the atmosphere, A is the camera's position. When the vertex is inside the atmosphere, B is the vertex's position. When either point is in space, we perform a sphere-intersection check to find out where the ray intersects the outer atmosphere, and then we make the intersection point A or B.</p> 
+ 
 
 	</div>	
-
+<img src="moon25.png" style="height: 117px; width: 500px; text-align: center;"> 
 	<div style="text-align: center;" style="margin-bottom: 40px; margin-top: 40px;">
-		<img src="planet2.png" style="height: 850px; width: 880px; text-align: center;"> 
+		
 	</div>	
+<p> Now that we have a line segment defined from point A → B, we want to approximate the integral that describes the atmospheric scattering across the segment length. In the figure above, five sample positions are selected and labeled points P 1 through P 5. Each (P) point represents a point in the atmosphere at which light scatters; light comes into the atmosphere from the sun, scatters at that point, and is reflected toward the camera in the VE. 
+ 
+Consider the point P 5, for example. Sunlight goes directly from the sun to P 5 in a straight line. Along that line the atmosphere scatters some of the light away from P 5. At P 5, some of this light is scattered directly toward the camera. As the light from P 5 travels to the camera, it is partially scattered away again. Another important detail is related to how the light scattering at the point P is modeled. Different particles in the atmosphere scatter light in different ways, hence the most common forms of scattering are Rayleigh and Mie scattering and extinction coefficients.  
 
+										       The 4 essential equations used to simulate atmospheric light scattering are below (26):</p> 
+
+<b> The Phase Function </b>		
+
+<img src="eq1.png.png" style="height: 88px; width: 918px; text-align: center;"> 
+										
+<p> The phase function describes how much light is scattered toward the direction of the camera based on the angle (the angle between the two green rays in figure above) and a constant g that affects the symmetry of the scattering. There are many different versions of the phase function. This one is an adaptation of the Henyey-Greenstein function used in Nishita et al. 1993. </p>
+				       
+<b> Out-Scattering Equation </b>
+
+<img src="eq2.png" style="height: 89px; width: 502px; text-align: center;"> 
+										       
+<p> The out-scattering equation is the inner integral. This part determines the "optical depth," or the average atmospheric density across the ray from point Pa to point Pb multiplied by the length of the ray. This is also called the "optical length" or "optical thickness." Think of it as a weighting factor based on how many air particles are in the path of the light along the ray. The rest of the equation is made up of constants, and they determine how much of the light those particles scatter away from the ray. </p>
+
+<b> In-Scattering Equation </b>	
+
+<img src="eq3.png" style="height: 43px; width: 500px; text-align: center;"> 
+				
+<p> The in-scattering equation describes how much light is added to a ray through the atmosphere due to light scattering from the sun. For each point P along the ray from Pa to Pb , PPc is the ray from the point to the sun and PPa is the ray from the sample point to the camera. The out-scattering function determines how much light is scattered away along the two green rays seen in the geometric figure above. The remaining light is scaled by the phase function, the scattering constant, and the intensity of the sunlight, Is (). The sunlight intensity does not have to be dependent on wavelength, but this is where you would apply the color if you wanted to create an extraterrestrial planetary environment revolving around a different colored star.
+
+<b> Surface-Scattering Equation </b>
+
+<img src="eq4.png" style="height: 24px; width: 598px; text-align: center;"> 
+
+<p> To scatter light reflected from a surface, such as the surface of a planet, you must take into account the fact that some of the reflected light will be scattered away on its way to the camera. In addition, extra light is scattered in from the atmosphere. Ie () is the amount of light emitted or reflected from a surface, and it is attenuated by an out-scattering factor. The sky is not a surface that can reflect or emit light, so only Iv () is needed to render the sky. Determining how much light is reflected or emitted by a surface is application-specific, but for reflected sunlight, you need to account for the out-scattering that takes place before the sunlight strikes the surface (that is, Is () x exp(-t(Pc Pb ,))), and use that as the color of the light when determining how much light the surface reflects (26). </p>
+
+								       
 	<div style="text-align: center;" style="margin-bottom: 40px; margin-top: 40px;">
 		<img src="planet3.png" style="height: 850px; width: 880px; text-align: center;"> 
 	</div>	
