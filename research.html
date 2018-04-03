@@ -370,7 +370,7 @@ Consider the point P 5, for example. Sunlight goes directly from the sun to P 5 
 
 <b> The Phase Function </b>		
 
-<img src="eq1.png.png" style="height: 88px; width: 918px; text-align: center;"> 
+<img src="eq1.png.jpg" style="height: 88px; width: 918px; text-align: center;"> 
 										
 <p> The phase function describes how much light is scattered toward the direction of the camera based on the angle (the angle between the two green rays in figure above) and a constant g that affects the symmetry of the scattering. There are many different versions of the phase function. This one is an adaptation of the Henyey-Greenstein function used in Nishita et al. 1993. </p>
 				       
@@ -393,8 +393,6 @@ Consider the point P 5, for example. Sunlight goes directly from the sun to P 5 
 <p> To scatter light reflected from a surface, such as the surface of a planet, you must take into account the fact that some of the reflected light will be scattered away on its way to the camera. In addition, extra light is scattered in from the atmosphere. Ie () is the amount of light emitted or reflected from a surface, and it is attenuated by an out-scattering factor. The sky is not a surface that can reflect or emit light, so only Iv () is needed to render the sky. Determining how much light is reflected or emitted by a surface is application-specific, but for reflected sunlight, you need to account for the out-scattering that takes place before the sunlight strikes the surface (that is, Is () x exp(-t(Pc Pb ,))), and use that as the color of the light when determining how much light the surface reflects (26). </p>
 
 								       
-	<div style="text-align: center;" style="margin-bottom: 40px; margin-top: 40px;">
-		<img src="planet3.png" style="height: 850px; width: 880px; text-align: center;"> 
 	</div>	
 
 
