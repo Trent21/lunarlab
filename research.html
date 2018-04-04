@@ -1062,7 +1062,7 @@ img.researchImg  {
 	
 	<p>Lambertian surfaces on Earth have characteristic properties such as layout, shape, texture, shading, composition and spectral reflectance<span class="cite">(3)</span>. The particolored terrain of Earth also causes surface colors to be commonly associated with specific kinds of surface compositions or textures. In the event the shape of an object results in varying degrees of reflectance on a Lambertian surface, an individual would then rely on visual cues such as shading, texture and color to perceive an object’s surface or 3D shape<span class="cite">(10)</span>.</p>
 
-	<img src="moon 15-2.png" alt="" class="researchImg">
+	<img src="Moon 15-2.png" alt="" class="researchImg">
 	<div class="imgCaption">Illustration of the brightness distribution model of light scattering on the surface of a Perfect Lambertian object (left), a Partial (varying degrees) Lambertian object (center), and a Non-Lambertian object (right). </div>
 	<div class="imgCredit">Image credit: Oravetz et al. (2011) </div>
 	
@@ -1080,7 +1080,7 @@ img.researchImg  {
 	<h5>Terrain Mapping in VR</h5>
 	<p>To create the most accurate representation of the unique reflectance properties on the lunar surface, an image of flat regolith on lunar terrain was mapped on VR terrain as a repeated texture. The terrain and textures were then modified using Perlin Noise, which is an extremely powerful algorithm that is used often in procedural content generation. Using this application, we were able to closely match the varying reflectance properties to simulate the visual effects of backscattering and deep shadows; creating an accurate visual depiction of lunar terrain as seen in Apollo images.</p>
 	
-	<img src="moon16.png" alt="" class="researchImg">
+	<img src="Moon16.png" alt="" class="researchImg">
 	<div class="imgCaption"></div>
 	<div class="imgCredit">Left image: Unity 3D rendered image with lunar regolith texture mapping and Perlin Noise terrain generation<br/>
 	Right image: NASA Apollo Archives 
@@ -1183,7 +1183,7 @@ img.researchImg  {
 	<p>The in-scattering equation describes how much light is added to a ray through the atmosphere due to light scattering from the sun. For each point P along the ray from P<span class="subscript">a</span> to P<span class="subscript">b</span> , PP<span class="subscript">c</span> is the ray from the point to the sun and PP<span class="subscript">a</span> is the ray from the sample point to the camera. The out-scattering function determines how much light is scattered away along the two green rays seen in the geometric figure above. The remaining light is scaled by the phase function, the scattering constant, and the intensity of the sunlight, I<span class="subscript">s</span> (). The sunlight intensity does not have to be dependent on wavelength, but this is where you would apply the color if you wanted to create an extraterrestrial planetary environment revolving around a different colored star.</p>
 	
 	<h6><center>Surface-Scattering Equation</center></h6>
-	<img src="eq4.jpg" alt="" class="researchImg">
+	<img src="eq4.png" alt="" class="researchImg">
 	<p>To scatter light reflected from a surface, such as the surface of a planet, you must take into account the fact that some of the reflected light will be scattered away on its way to the camera. In addition, extra light is scattered in from the atmosphere. I<span class="subscript">e</span> () is the amount of light emitted or reflected from a surface, and it is attenuated by an out-scattering factor. The sky is not a surface that can reflect or emit light, so only I<span class="subscript">v</span> () is needed to render the sky. Determining how much light is reflected or emitted by a surface is application-specific, but for reflected sunlight, you need to account for the out-scattering that takes place before the sunlight strikes the surface (that is, I<span class="subscript">s</span> () x exp(-t(P<span class="subscript">c</span> P<span class="subscript">b</span> ,))), and use that as the color of the light when determining how much light the surface reflects<span class="cite">(26)</span>.</p>
 		
 </div>
