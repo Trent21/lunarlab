@@ -278,10 +278,10 @@ The use of certain Lambertian characteristic properties as a visual reference fo
 									    <br>
 The atmospheric medium through which light is scattered on Earth consists of invariant properties that provide an optimal environment for veridical (direct or accurate) perception of physical stimuli. Earth’s atmosphere is constructed of unique properties that consist of a specific range of uniform size particles. The scattering of light occurs when light strikes a range of small, non-absorbing spherical particles, known as Rayleigh scatter, which results in the omnidirectional scattering of light across the surface <sup> (19) </sup>.</p>
 	
-<p align="center"> <img src="rayleigh.png" style="height: 538px; width: 538px="float:left;"> </p> 
-	<p align="center"> <b> Image credit (left): </b> Pearson Education (2011)  </p>
+<p align="center"> <img src="rayleigh.png" style="height: 538px; width: 538px="float:left;"> 
+	<b> Image credit (left): </b> Pearson Education (2011) 
 	<br>
-	<p align="center"> <b> Image credit (right): </b> Sharayanan <sup> (36) </sup> </p> 
+	<b> Image credit (right): </b> Sharayanan <sup> (36) </sup> </p> 
 
 
 <p align="left"> The criteria for Rayleigh scattering requires that particle sizes range from α = 0.1-1.0; creating a refractive index that is less than 1. This creates scatter properties (intensity, direction) that provide a uniform distribution across a medium comprised of shorter wavelengths, creating the blue color which is dominant in Earth’s atmosphere. This illumination effect created by Rayleigh scatter in Earth’s atmosphere is referred to as “diffuse sky radiation” which gives the sky its blue color, as it scatters light more heavily at shorter wavelengths (blue first, then green, and then red). It is also responsible for the Sun’s yellow hue <sup> (20) </sup>. The sun’s light turns yellow/orange/red at sunset because as light travels far through the atmosphere, and the majority of blue and green wavelengths are scattered away before it reaches the human eye. </p>
@@ -292,10 +292,9 @@ The atmospheric medium through which light is scattered on Earth consists of inv
 <br>
 Mie theory assumes the scatter of light can vary based on the size of particles, thus increasing in complexity. It accounts for a larger range of particles in the air that can possess different reflectance and absorbance properties. One example is the scattering of aerosols (such as dust and pollution). </p> 
 		
-	<p align="center"> <img src="Mie.png" style="height: 450px; width: 598px="float:left;"> </p> 
-	<p align="center"> <b> Image credit: </b> http://apollo.lsc.vsc.edu </p>
-	<br>
-	<p align="center"> <b> Image credit: </b> Sharayanan <sup> (36) </sup> </p>
+	<p align="center"> <img src="Mie.png" style="height: 450px; width: 598px="float:left;">  
+	<br> <b> Image credit: </b> http://apollo.lsc.vsc.edu 
+	<br> <b> Image credit: </b> Sharayanan <sup> (36) </sup> </p>
 	
 <p align="left"> On a hazy day, Mie scattering causes the sky to look a bit gray and causes the sun to have a large white halo around it. Mie scattering can also be used to simulate light scattered from small particles of water and ice in the air, to produce effects such as rainbows. </p> 
 	<br>
@@ -362,7 +361,9 @@ This difference is due to the fundamental assumptions of Mie theory, and the tra
 Rayleigh and Mie scatter/extinction coefficients are used to model the visual lighting effects for each type of VE based on the theoretical frameworks of light scattering supported in the literature <sup>(9,20)</sup>. Adjustments were made to Rayleigh and Mie coefficients in Unity, as well as additional precomputed single-scattering equations to render different types of planetary atmospheres: Earth’s atmosphere (left), the lunar exosphere with CPLS properties (right), and a hypothetical rendering of an Earth-like atmosphere on the Moon (center). </p> </div> 
 
 			<p align="center"> <img src="moon24.png" style="height: 113px; width: 598px; text-align: center;"> </p> 
-
+		<br> <b> Image credit: </b> Rahill (2017) LPVR Laboratory 
+		<br> <i> Unity 3D rendering of an Earth-like "Rayleigh" atmosphere (left), a hypothetical rendering of an Earth-like atmosphere on the Moon (center) and a render of a lunar environment with CPLS properties (right). </i> 
+		
 	<div style="margin-right: 120px; margin-left: 120px;"> <p> Generating an accurate visual representation of atmospheric scattering in computer graphics models (CGM) is challenging, and understanding these equations is crucial for rendering realistic environments. Since the equations used explain atmospheric light scattering are extremely complex, CGM models generally use simplified equations. The scattering equations have nested integrals that are impossible to solve analytically. Fortunately, we can numerically compute the value of an integral with techniques such as the trapezoid rule, as suggested by O’Neil (2005) <sup>(26)</sup>; who proposed the implementation of full scattering equations to model an atmosphere more accurately and at lower densities.</p> </div>  
 
 
@@ -376,7 +377,7 @@ Rayleigh and Mie scatter/extinction coefficients are used to model the visual li
 	<div style="margin-right: 120px; margin-left: 120px;"> <p> Now that we have a line segment defined from point A → B, we want to approximate the integral that describes the atmospheric scattering across the segment length. In the figure above, five sample positions are selected and labeled points P 1 through P 5. Each (P) point represents a point in the atmosphere at which light scatters; light comes into the atmosphere from the sun, scatters at that point, and is reflected toward the camera in the VE. </p> </div> 
  
 
-	<div style="margin-right: 120px; margin-left: 120px;"> <p> Consider the point P 5, for example. Sunlight goes directly from the sun to P 5 in a straight line. Along that line the atmosphere scatters some of the light away from P 5. At P 5, some of this light is scattered directly toward the camera. As the light from P 5 travels to the camera, it is partially scattered away again. Another important detail is related to how the light scattering at the point P is modeled. Different particles in the atmosphere scatter light in different ways, hence the most common forms of scattering are Rayleigh and Mie scattering and extinction coefficients.</p> </div> 
+	<div style="margin-right: 120px; margin-left: 120px;"> <p> Consider the point P 5, for example. Sunlight goes directly from the sun to P 5 in a straight line. Along that line the atmosphere scatters some of the light away from P 5. At P 5, some of this light is scattered directly toward the camera. As the light from P 5 travels to the camera, it is partially scattered away again. Another important detail is related to how the light scattering at the point P is modeled. Different particles in the atmosphere scatter light in different ways, hence the most common forms of scattering are Rayleigh and Mie scattering and extinction coefficients.</p> 
 
 										<p align="center"> The 4 main equations used to simulate atmospheric light scattering are below <sup> (26) </sup>:</p> 
 
