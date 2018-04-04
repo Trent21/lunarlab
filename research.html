@@ -285,6 +285,7 @@ The atmospheric medium through which light is scattered on Earth consists of inv
 	
 <p align="center"> <img src="rayleigh.png" style="height: 538px; width: 538px="float:left;"> </p> 
 	<p align="center"> <b> Image credit (left): </b> Pearson Education (2011)  </p>
+	<br>
 	<p align="center"> <b> Image credit (right): </b> Sharayanan <sup> (36) </sup> </p> 
 
 
@@ -298,10 +299,10 @@ Mie theory assumes the scatter of light can vary based on the size of particles,
 		
 	<p align="center"> <img src="Mie.png" style="height: 450px; width: 598px="float:left;"> </p> 
 	<p align="center"> <b> Image credit: </b> http://apollo.lsc.vsc.edu </p>
-	<p align="center"> <b> Image credit: </b> Sharayanan <sup> (36) </sup> </p>
 	<br>
+	<p align="center"> <b> Image credit: </b> Sharayanan <sup> (36) </sup> </p>
+	
 <p align="left"> On a hazy day, Mie scattering causes the sky to look a bit gray and causes the sun to have a large white halo around it. Mie scattering can also be used to simulate light scattered from small particles of water and ice in the air, to produce effects such as rainbows. </p> 
-
 	<br>
 											      
 <p align="left"> Unlike Rayleigh theory, Mie assumes particles of much larger sizes, such as α = 10, creating scatter properties which are not uniformly distributed. In instances when all wavelengths of light are scattered equally, Mie scattering is occurring; hence why clouds appear white. The characterization of the scattering of sunlight which occurs on the Moon has been modeled using the theory of Mie scatter, due to the scattering of light in the vacuum of space <sup> (27, 28) </sup> , which will be discussed further in the Rendering Planetary Atmospheres section. 
@@ -319,7 +320,8 @@ A way to compare effects of Rayleigh and Mie scattering is to plot the degree of
 	<p align="left"> A goal of lunar psychophysics is to apply the functions of atmospheric scattering to understand perceptual distortions by referencing the location of the light source and an object relative to the observer. This is because visibility can change based on the intensity and direction of light relative to the observer and further create inconsistencies in the visibility of an object’s surface features. Below is a conceptual illustration adapted from Nave (2005), showing perceptions of different hypothetical objects in the sky with different reflectance properties: Rayleigh (small particulate matter) and Mie (larger particulate matter). </p> 
 <br>
 <p align="center"> <img src="moon21.png" style="height: 412px; width: 598px; text-align: center;"> 
-<br>								  
+	<br> <p align="center"> <b> Image credit: </b> Nave (2005) illustration hyperphysics NASA GSU
+								  
 <p> The two Rayleigh objects (blue dotted lines) objects illustrate a uniform distribution of reflectance that reaches the observer in a consistent, perceivable wavelength (blue) (20). The two Mie objects (black lines) illustrate two different examples of the characteristic inconsistencies of Mie scatter that vary based on an object’s location relative to the observer. The triangulated position of an object’s relative location to the Sun and the observer can result in the forward scattering of light off an object, causing backscatter (bottom left). Or, it can result in the distributed illuminance of the second object (top right) causing light to refract in a different direction that does not reach the observer; concealing the object almost completely. </p> 
 	
 
@@ -343,6 +345,8 @@ A way to compare effects of Rayleigh and Mie scattering is to plot the degree of
 
 	<div style="text-align: center;" style="margin-bottom: 40px; margin-top: 40px;">
 		<img src="moon23.png" style="height: 364px; width: 598px; text-align: center;"> 
+		<p align="center"> <b> Image credit: </b>: Rahill (2017) LPVR Laboratory
+<br>
 
 	<div style="margin-right: 120px; margin-left: 120px;"> <p> These exploratory mathematical manipulations led to a pivotal discovery about Mie theory and its overall accuracy in modeling light scattering on the Moon. The characterization of the scattering of sunlight which occurs on the Moon has been modeled using the theory of Mie scatter (27, 28). However, when Mie scattering coefficients were adjusted to “best fit” the visual representation of a lunar VE, it was discovered that the visual effects produced by Mie scatter models did not match lunar images from the Apollo missions with respect to brightness. 
 							    
@@ -381,31 +385,31 @@ Rayleigh and Mie scatter/extinction coefficients are used to model the visual li
 
 	<div style="margin-right: 120px; margin-left: 120px;"> <p> Consider the point P 5, for example. Sunlight goes directly from the sun to P 5 in a straight line. Along that line the atmosphere scatters some of the light away from P 5. At P 5, some of this light is scattered directly toward the camera. As the light from P 5 travels to the camera, it is partially scattered away again. Another important detail is related to how the light scattering at the point P is modeled. Different particles in the atmosphere scatter light in different ways, hence the most common forms of scattering are Rayleigh and Mie scattering and extinction coefficients.</p> </div> 
 
-										<p align="center"> The 4 essential equations used to simulate atmospheric light scattering are below (26):</p> 
+										<p align="center"> The 4 main equations used to simulate atmospheric light scattering are below <sup> (26) </sup>:</p> 
 
-										       <p> <b> The Phase Function </b>	</p>	
+										      	<p align="center"> <b> The Phase Function </b>	</p>	
 
-<img src="eq1.png.jpg" style="height: 80px; width: 500px; text-align: center;"> 
+	<p align="center"> <img src="eq1.png.jpg" style="height: 80px; width: 500px; text-align: center;"> </p> 
 										
 <p> The phase function describes how much light is scattered toward the direction of the camera based on the angle (the angle between the two green rays in figure above) and a constant g that affects the symmetry of the scattering. There are many different versions of the phase function. This one is an adaptation of the Henyey-Greenstein function used in Nishita et al. 1993. </p>
 				       
-									      <p> <b> Out-Scattering Equation </b> </p>
+									     	<p align="center"> <b> Out-Scattering Equation </b> </p>
 
-<img src="eq2.jpg" style="height: 89px; width: 502px; text-align: center;"> 
+	<p align="center"> <img src="eq2.jpg" style="height: 89px; width: 502px; text-align: center;"> </p>
 										       
-<p> The out-scattering equation is the inner integral. This part determines the "optical depth," or the average atmospheric density across the ray from point Pa to point Pb multiplied by the length of the ray. This is also called the "optical length" or "optical thickness." Think of it as a weighting factor based on how many air particles are in the path of the light along the ray. The rest of the equation is made up of constants, and they determine how much of the light those particles scatter away from the ray. </p>
+<p> The out-scattering equation is the inner integral. This part determines the "optical depth," or the average atmospheric density across the ray from point P<sub>a</sub> to point P<sub>b</sub> multiplied by the length of the ray. This is also called the "optical length" or "optical thickness." Think of it as a weighting factor based on how many air particles are in the path of the light along the ray. The rest of the equation is made up of constants, and they determine how much of the light those particles scatter away from the ray. </p>
 
-									<p> <b> In-Scattering Equation </b> </p> 
+										<p align="center"> <b> In-Scattering Equation </b> </p> 
 
-<img src="eq3.png" style="height: 43px; width: 500px; text-align: center;"> 
+		<p align="center"> <img src="eq3.png" style="height: 43px; width: 500px; text-align: center;"> </p>
 				
-<p> The in-scattering equation describes how much light is added to a ray through the atmosphere due to light scattering from the sun. For each point P along the ray from Pa to Pb , PPc is the ray from the point to the sun and PPa is the ray from the sample point to the camera. The out-scattering function determines how much light is scattered away along the two green rays seen in the geometric figure above. The remaining light is scaled by the phase function, the scattering constant, and the intensity of the sunlight, Is (). The sunlight intensity does not have to be dependent on wavelength, but this is where you would apply the color if you wanted to create an extraterrestrial planetary environment revolving around a different colored star. </p> 
+<p> The in-scattering equation describes how much light is added to a ray through the atmosphere due to light scattering from the sun. For each point P along the ray from P<sub>a</sub> to P<sub>b</sub> , PPc is the ray from the point to the sun and PP<sub>a</sub> is the ray from the sample point to the camera. The out-scattering function determines how much light is scattered away along the two green rays seen in the geometric figure above. The remaining light is scaled by the phase function, the scattering constant, and the intensity of the sunlight, I<sub>s</sub> (). The sunlight intensity does not have to be dependent on wavelength, but this is where you would apply the color if you wanted to create an extraterrestrial planetary environment revolving around a different colored star. </p> 
 
-									  <p> <b> Surface-Scattering Equation </b> </p> 
+									  	<p align="center"> <b> Surface-Scattering Equation </b> </p> 
 
-<img src="eq4.png" style="height: 24px; width: 598px; text-align: center;"> 
+		<p align="center"> <img src="eq4.png" style="height: 24px; width: 598px; text-align: center;"> </p> 
 
-<p> To scatter light reflected from a surface, such as the surface of a planet, you must take into account the fact that some of the reflected light will be scattered away on its way to the camera. In addition, extra light is scattered in from the atmosphere. Ie () is the amount of light emitted or reflected from a surface, and it is attenuated by an out-scattering factor. The sky is not a surface that can reflect or emit light, so only Iv () is needed to render the sky. Determining how much light is reflected or emitted by a surface is application-specific, but for reflected sunlight, you need to account for the out-scattering that takes place before the sunlight strikes the surface (that is, Is () x exp(-t(Pc Pb ,))), and use that as the color of the light when determining how much light the surface reflects (26). </p>
+<p> To scatter light reflected from a surface, such as the surface of a planet, you must take into account the fact that some of the reflected light will be scattered away on its way to the camera. In addition, extra light is scattered in from the atmosphere. I<sub>e</sub> () is the amount of light emitted or reflected from a surface, and it is attenuated by an out-scattering factor. The sky is not a surface that can reflect or emit light, so only I<sub>v</sub> () is needed to render the sky. Determining how much light is reflected or emitted by a surface is application-specific, but for reflected sunlight, you need to account for the out-scattering that takes place before the sunlight strikes the surface (that is, Is () x exp(-t(P<sub>c</sub> P<sub>b</sub> ,))), and use that as the color of the light when determining how much light the surface reflects <sup>(26)</sup>. </p>
 
 								      
 
