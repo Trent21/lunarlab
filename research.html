@@ -1,447 +1,1310 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Research and Development</title>
+	<title> Lunar Psychophysics Virtual Reality Lab</title>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style type="text/css">
+	
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.5em;
+	line-height: 1.6;
+	font-weight: 400;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	color: #222;
+}
+
+.jumbotron {
+	background-image: url("spacepic.jpg"); background-size: cover; -ms-background-size: cover; -o-background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; 
+}
+
+
+
+/* Grid
+********************************************************************* */  
+.container {
+	position: relative;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.column, .columns {
+	width: 100%;
+	float: left;
+	box-sizing: border-box;
+}
+
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+.container {
+	width: 85%;
+	padding: 0;
+}
+}
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+.container {
+	width: 80%;
+}
+.column,  .columns {
+	margin-left: 4%;
+}
+.column:first-child,  .columns:first-child {
+	margin-left: 0;
+}
+.one.column,  .one.columns {
+	width: 4.66666666667%;
+}
+.two.columns {
+	width: 13.3333333333%;
+}
+.three.columns {
+	width: 22%;
+}
+.four.columns {
+	width: 30.6666666667%;
+}
+.five.columns {
+	width: 39.3333333333%;
+}
+.six.columns {
+	width: 48%;
+}
+.seven.columns {
+	width: 56.6666666667%;
+}
+.eight.columns {
+	width: 65.3333333333%;
+}
+.nine.columns {
+	width: 74.0%;
+}
+.ten.columns {
+	width: 82.6666666667%;
+}
+.eleven.columns {
+	width: 91.3333333333%;
+}
+.twelve.columns {
+	width: 100%;
+	margin-left: 0;
+}
+.one-third.column {
+	width: 30.6666666667%;
+}
+.two-thirds.column {
+	width: 65.3333333333%;
+}
+.one-half.column {
+	width: 48%;
+}
+/* Offsets */
+.offset-by-one.column,  .offset-by-one.columns {
+	margin-left: 8.66666666667%;
+}
+.offset-by-two.column,  .offset-by-two.columns {
+	margin-left: 17.3333333333%;
+}
+.offset-by-three.column,  .offset-by-three.columns {
+	margin-left: 26%;
+}
+.offset-by-four.column,  .offset-by-four.columns {
+	margin-left: 34.6666666667%;
+}
+.offset-by-five.column,  .offset-by-five.columns {
+	margin-left: 43.3333333333%;
+}
+.offset-by-six.column,  .offset-by-six.columns {
+	margin-left: 52%;
+}
+.offset-by-seven.column,  .offset-by-seven.columns {
+	margin-left: 60.6666666667%;
+}
+.offset-by-eight.column,  .offset-by-eight.columns {
+	margin-left: 69.3333333333%;
+}
+.offset-by-nine.column,  .offset-by-nine.columns {
+	margin-left: 78.0%;
+}
+.offset-by-ten.column,  .offset-by-ten.columns {
+	margin-left: 86.6666666667%;
+}
+.offset-by-eleven.column,  .offset-by-eleven.columns {
+	margin-left: 95.3333333333%;
+}
+.offset-by-one-third.column,  .offset-by-one-third.columns {
+	margin-left: 34.6666666667%;
+}
+.offset-by-two-thirds.column,  .offset-by-two-thirds.columns {
+	margin-left: 69.3333333333%;
+}
+.offset-by-one-half.column,  .offset-by-one-half.columns {
+	margin-left: 52%;
+}
+}
+/* Typography
+********************************************************************* */
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 2rem;
+	font-weight: 300;
+}
+h1 {
+	font-size: 4.0rem;
+	line-height: 1.2;
+	letter-spacing: -.1rem;
+}
+h2 {
+	font-size: 3.6rem;
+	line-height: 1.25;
+	letter-spacing: -.1rem;
+}
+h3 {
+	font-size: 3.0rem;
+	line-height: 1.3;
+	letter-spacing: -.1rem;
+}
+h4 {
+	font-size: 2.4rem;
+	line-height: 1.35;
+	letter-spacing: -.08rem;
+}
+h5 {
+	font-size: 1.8rem;
+	line-height: 1.5;
+	letter-spacing: -.05rem;
+}
+h6 {
+	font-size: 1.5rem;
+	line-height: 1.6;
+	letter-spacing: 0;
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+h1 {
+	font-size: 5.0rem;
+}
+h2 {
+	font-size: 4.2rem;
+}
+h3 {
+	font-size: 3.6rem;
+}
+h4 {
+	font-size: 3.0rem;
+}
+h5 {
+	font-size: 2.4rem;
+}
+h6 {
+	font-size: 1.5rem;
+}
+}
+p {
+	margin-top: 0;
+}
+/* Links
+********************************************************************* */
+a {
+	color: #1EAEDB;
+}
+a:hover {
+	color: #0FA0CE;
+}
+/* Header Section
+********************************************************************* */
+
+
+header {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+ width: 100%%;
+	height: 100vh;
+	background: #e55d87;
+	background: -moz-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
+	background: -webkit-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
+	background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e55d87', endColorstr='#5fc3e4', GradientType=1 );
+}
+.title {
+	-webkit-align-self: center;
+	-ms-flex-item-align: center;
+	align-self: center;
+	padding: 2rem;
+	max-width: 960px;
+	text-align: center;
+}
+.title .smallsep {
+	background: #fff;
+	height: 2px;
+	width: 70px;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.title h1 {
+	font-size: 80px;
+	font-weight: 300;
+	text-transform: uppercase;
+	line-height: 0.85;
+	margin-bottom: 28px;
+	margin: 0;
+	padding: 0;
+	color: #FFFFFF;
+}
+.title h2 {
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin-top: 50px;
+}
+
+@media only screen and (max-height: 700px) {
+.title h1 {
+	font-size: 80px;
+}
+}
+.title p {
+	max-width: 600px;
+	margin: 0 auto;
+	line-height: 150%;
+}
+
+@media only screen and (max-width: 500px) {
+.title h1 {
+	font-size: 65px;
+}
+}
+.title .icon {
+	color: #FFFFFF;
+	font-size: 50px;
+}
+.main_nav {
+	position: fixed;
+	top: 0px;
+	max-height: 50px;
+	z-index: 999;
+	width: 100%;
+	padding-top: 17px;
+	background: none;
+	overflow: hidden;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	opacity: 0;
+	top: -100px;
+	padding-bottom: 6px;
+}
+
+@media only screen and (max-width: 766px) {
+.main_nav {
+	padding-top: 25px;
+}
+}
+.open-nav {
+	max-height: 400px !important;
+}
+.sticky {
+	background-color: #ffffff;
+	opacity: 1;
+	top: 0px;
+}
+nav {
+	width: 100%;
+	margin-top: 5px;
+}
+
+@media only screen and (max-width: 766px) {
+nav {
+	width: 100%;
+}
+}
+nav ul {
+	list-style: none;
+	overflow: hidden;
+	text-align: center;
+}
+
+@media only screen and (max-width: 766px) {
+nav ul {
+	padding-top: 0px;
+	margin-bottom: 22px;
+	text-align: center;
+	width: 100%;
+}
+}
+nav ul li {
+	display: inline-block;
+	margin-left: 35px;
+	line-height: 1.5;
+	letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 766px) {
+nav ul li {
+	width: 100%;
+	padding: 7px 0;
+	margin: 0;
+}
+nav ul li:first-child {
+	margin-top: 70px;
+}
+}
+nav ul a {
+	text-transform: uppercase;
+	font-size: 12px;
+	text-decoration: none;
+}
+nav ul a:hover {
+	color: #CFCFCF;
+}
+.mobile-toggle {
+	display: none;
+	cursor: pointer;
+	font-size: 20px;
+	position: absolute;
+	right: 22px;
+	top: 0;
+	width: 30px;
+}
+
+@media only screen and (max-width: 766px) {
+.mobile-toggle {
+	display: block;
+}
+}
+.mobile-toggle span {
+	width: 30px;
+	height: 4px;
+	margin-bottom: 6px;
+	background: #000000;
+	display: block;
+}
+.scroll-down {
+	position: absolute;
+	left: 50%;
+	bottom: 5vh;
+	display: block;
+	text-align: center;
+	font-size: 20px;
+	z-index: 100;
+	text-decoration: none;
+	text-shadow: 0;
+	width: 13px;
+	height: 13px;
+	border-bottom: 2px solid #fff;
+	border-right: 2px solid #fff;
+	z-index: 9;
+	-webkit-transform: translate(-50%, 0%) rotate(45deg);
+	-moz-transform: translate(-50%, 0%) rotate(45deg);
+	transform: translate(-50%, 0%) rotate(45deg);
+	-webkit-animation: fade_move_down 2s ease-in-out infinite;
+	-moz-animation: fade_move_down 2s ease-in-out infinite;
+	animation: fade_move_down 2s ease-in-out infinite;
+}
+
+
+/*animated scroll arrow animation*/
+@-webkit-keyframes fade_move_down {
+ 0% {
+-webkit-transform:translate(0, -10px) rotate(45deg);
+opacity: 0;
+}
+ 50% {
+opacity: 1;
+}
+ 100% {
+-webkit-transform:translate(0, 10px) rotate(45deg);
+opacity: 0;
+}
+}
+@-moz-keyframes fade_move_down {
+ 0% {
+-moz-transform:translate(0, -10px) rotate(45deg);
+opacity: 0;
+}
+ 50% {
+opacity: 1;
+}
+ 100% {
+-moz-transform:translate(0, 10px) rotate(45deg);
+opacity: 0;
+}
+}
+@keyframes fade_move_down {
+ 0% {
+transform:translate(0, -10px) rotate(45deg);
+opacity: 0;
+}
+ 50% {
+opacity: 1;
+}
+ 100% {
+transform:translate(0, 10px) rotate(45deg);
+opacity: 0;
+}
+}
+/* About Section
+********************************************************************* */
+
+#about {
+	padding: 100px 0 50px 0;
+}
+/* Team Section
+********************************************************************* */
+#team {
+	padding: 50px 0 100px 0;
+}
+#team .icon {
+	font-size: 26px;
+}
+/* Skills Section
+********************************************************************* */
+#skills {
+	padding: 100px 0 100px 0;
+	background-color: #F5F5F5;
+}
+.progressBar {
+	margin-bottom: 26px;
+	margin-bottom: 1.66em;
+}
+.progressBar h4 {
+	font-size: 16px;
+	text-transform: none;
+	margin-bottom: 7px;
+	margin-bottom: .33em;
+}
+.progressBarContainer {
+	width: 100%;
+	height: 8px;
+	background: #E1E1E1;
+	overflow: hidden;
+}
+.progressBarValue {
+	height: 8px;
+	float: left;
+	background: #e55d87; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
+	background: -webkit-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
+	background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+}
+.value-00 {
+	width: 0;
+}
+.value-10 {
+	width: 10%;
+}
+.value-20 {
+	width: 20%;
+}
+.value-30 {
+	width: 30%;
+}
+.value-40 {
+	width: 40%;
+}
+.value-50 {
+	width: 50%;
+}
+.value-60 {
+	width: 60%;
+}
+.value-70 {
+	width: 70%;
+}
+.value-80 {
+	width: 80%;
+}
+.value-90 {
+	width: 90%;
+}
+.value-100 {
+	width: 100%;
+}
+/* Portfolio Section
+********************************************************************* */
+#portfolio {
+	padding: 100px 0 100px 0;
+}
+.image {
+	background-color: #5a5a5a;
+	width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	transition: .5s;
+}
+.image:hover {
+	opacity: 0.6;
+	transition: .3s;
+	background-image: url(../images/hoverbg.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* Testimonial Section
+********************************************************************* */
+#testimonial {
+	background-color: #F5F5F5;
+	padding: 100px 0 100px 0;
+}
+.quoteLoop {
+	height: auto;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+.quote {
+	margin: 10px 30px;
+	height: inherit;
+	top: 0px;
+	display: none;
+	text-align: center;
+}
+/* Contact Section
+********************************************************************* */
+#contact {
+	padding: 100px 0 100px 0;
+}
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
+	height: 38px;
+	padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+	background-color: #F5F5F5;
+	border: none;
+	box-shadow: none;
+	box-sizing: border-box;
+	border-radius: 0;
+	outline: none;
+}
+textarea {
+	min-height: 250px;
+}
+input[type="submit"] {
+	display: inline-block;
+	height: 38px;
+	padding: 0 30px;
+	color: #fff;
+	text-align: center;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 38px;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	background: #5fc3e4;
+	border-radius: 0px;
+	border: 0;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+input[type="submit"]:hover {
+	background: #e55d87;
+	text-decoration: none;
+}
+/* Footer Section
+********************************************************************* */
+footer {
+	min-height: 120px;
+	padding: 40px 0 40px 0;
+	box-sizing: border-box;
+}
+footer p {
+	color: #FFFFFF;
+	margin: 20px 0 0 0;
+}
+.socialIcons {
+	font-size: 34px;
+	color: rgba(255, 255, 255, 0.7);
+}
+/* Lists
+********************************************************************* */
+ul {
+	list-style: circle inside;
+}
+ol {
+	list-style: decimal inside;
+}
+ol, ul {
+	padding-left: 0;
+	margin-top: 0;
+}
+ul ul, ul ol, ol ol, ol ul {
+	margin: 1.5rem 0 1.5rem 3rem;
+	font-size: 90%;
+}
+li {
+	margin-bottom: 1rem;
+}
+/* Spacing
+********************************************************************* */
+button, .button {
+	margin-bottom: 1rem;
+}
+input, textarea, select, fieldset {
+	margin-bottom: 1.5rem;
+}
+pre, blockquote, dl, figure, table, p, ul, ol, form {
+	margin-bottom: 2.5rem;
+}
+/* Utilities
+********************************************************************* */
+.u-full-width {
+	width: 100%;
+	box-sizing: border-box;
+}
+.u-max-full-width {
+	max-width: 100%;
+	box-sizing: border-box;
+}
+.u-pull-right {
+	float: right;
+}
+.u-pull-left {
+	float: left;
+}
+/* Clearing
+********************************************************************* */
+.container:after, .row:after, .u-cf {
+	content: "";
+	display: table;
+	clear: both;
+}
+/* Misc
+********************************************************************* */
+
+.icon {
+	padding-right: 10px;
+	color: #e55d87;
+}
+/*.block {
+	width: 70px;
+	height: 2px;
+	background: #e55d87; 
+	background: -moz-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
+	background: -webkit-linear-gradient(-45deg, #e55d87 0%, #5fc3e4 100%);
+	background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+	margin-bottom: 50px;
+}
+*/
+
+/*About section*/
+.card{
+    -moz-border-radius: 2%;
+    -webkit-border-radius: 2%;
+    border-radius: 2%;
+    box-shadow: 5px 5px 0 rgba(0,0,0,0.08);
+}
+
+.profile .profile-body {
+    padding: 20px;
+    background: #f7f7f7;
+}
+
+.profile .profile-bio {
+    background: #fff;
+    position: relative;
+    padding: 15px 10px 5px 15px;
+}
+
+.profile .profile-bio a {
+    left: 50%;
+    bottom: 20px;
+    margin: -62px;
+    text-align: center;
+    position: absolute;
+}
+
+.profile .profile-bio h2 {
+    margin-top: 0;
+    font-weight: 200;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #585f69;
+    margin-top: 5px;
+    text-shadow: none;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+h2 {
+    font-size: 24px;
+    line-height: 33px;
+}
+
+p, li, li a {
+    color: #555;
+}                         
+
+.wrapper {
+  column-count: 1;
+  column-gap: 50px;
+  padding: 50px;
+}
+
+p {
+  line-height: 1.6; 
+  font-family: Helvetica;
+  text-align: justify;
+  margin: 0;
+  font-size: 14px;
+}
+
+.star {
+  float: left;
+  width: 250px;
+/*  shape-outside: url(https://upload.wikimedia.org/wikipedia/commons/3/34/Red_star.svg);*/
+  shape-margin:20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.my-4 {
+	color: white;
+
+}
+
+hr {
+	color: white;
+}
+
+body {
+	background-color: white;
+}
+
+/* FOR RESEARCH PAGE ****************************/
+
+h5 {
+	font-size:1.8em;
+	margin-bottom:10px;
+	text-align:center;
+}
+
+h6 {
+	font-size:1.05em;
+	margin-top:25px;
+	margin-bottom:5px;
+	font-style:bold;
+}
+
+p {
+	margin-bottom:10px;
+}
+.researchImg {
+	
+	margin-right: 20px; 
+	max-height: 500px; 
+	max-width: 100%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+img.researchImg  {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+.imgCaption {
+	font-size:.7em;
+	text-align:center;
+	font-style:italic;
+	margin-bottom:5px;
+}
+
+.imgCredit {
+	font-size:.7em;
+	text-align:center;
+	margin-bottom: 15px;
+}
+
+.references p {
+	font-size:14px;
+	line-height: 17px;
+	margin-bottom:10px;
+
+}
+
+.cite {
+	vertical-align: super;
+    font-size: 0.7em;
+}
+
+.subscript {
+    vertical-align: sub;
+    font-size: 0.7em;
+}
+
+
+</style>
+
+
+
 </head>
+
+
 <body>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <!--  <a class="navbar-brand" href="#">Navbar</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#team">Lab Managers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#teams">Lab Team</a>
+      </li>
+	<li class="nav-item">
+        <a class="nav-link" href="research.html">Research and Development</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#skills">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#portfolio">Gallery</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#contact">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron" style="">
+	<div class="wrapper">
+		<h1 class="display-4" style="color: white; font-size: 30px; text-align: center;"> Lunar Psychophysics Virtual Reality Lab <br /> Research and Development</h1>
+	  	<hr class="my-4" style="background-color: white; margin-right: 180px; margin-left: 180px;">
+  		<h2 class="display-6" style="color: white; text-align: center;">Motivation </h2>
+		<p style="color: white; text-align: center;">Lunar psychophysics is a novel, interdisciplinary field of study that aims to resolve issues in perceptibility from the Apollo era with a multidimensional approach to determine human perceptual capabilities in lunar environments. Apollo astronauts faced many perceptual challenges while navigating the lunar surface, and the adverse effects of their sensory-perceptual errors were documented across multiple missions. Given recent changes to NASA’s plans for returning to the Moon in the 2020s<span class="cite">(30)</span>, understanding the sources of perceptual distortion on the Moon has important implications for astronauts. In preparation for future missions to the Moon, Mars and deep space asteroids, astronauts will experience prolonged exposure to unfamiliar stimuli during deep space explorations and in extraterrestrial planetary environments. Since the end of the Apollo program, experiments on the capabilities of the human visual system in space have been conducted in environments with which astronauts are most familiar, such as the Space Shuttle or International Space Station<span class="cite">(11, 12)</span>. This has benefitted the understanding of perception in microgravity within small, compartmentalized areas of space. However, there is limited knowledge on how the differential properties of light outside of Earth’s atmosphere affects human perception in extraterrestrial lunar environments.</p>
+	</div>
+</div>
+  
+
+
+<!-- 
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->  
+
+
+  <div class="container">
+    <div class="row" style="margin-bottom: 20px;">
+    </div>
+   
+
+<div class="wrapper" style="background-color: #f5f5f5;">
 	
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="index.html">Home</a></li>
-  <li role="presentation"><a href="#missions">Apollo Missions</a></li>
-  <li role="presentation"><a href="#psychophysics">Psychophysics</a></li>
-   <li role="presentation"><a href="#lunar">Lunar Psychophysics</a></li>
-  <li role="presentation"><a href="#exosphere">The Lunar Exosphere</a></li>
-   <li role="presentation"><a href="#surface">The Lunar Surface</a></li>
-  <li role="presentation"><a href="#vr">Terrain Mapping in VR</a></li>
-   <li role="presentation"><a href="#light">Atmospheric Light Scattering Theory</a></li>
-   <li role="presentation"><a href="#black"black>Virtual Black Holes and Eclipses: 
-   The Mie(G) Function</a></li>
-   <li role="presentation"><a href="#planet">Rendering Planetary Atmospheres</a></li>
-  <li role="presentation"><a href="#references">References</a></li>
-</ul>
+	<h5>Apollo Missons</h5>
+	<p>Upon landing on the Moon, the Apollo astronauts encountered an environment where the visual-sensory cues used for depth and distance perception on Earth were no longer reliable. Astronauts significantly underestimated the sizes of craters, hill slopes and distances to landmarks. Many faced unanticipated challenges when traversing lunar terrain, such as physical overexertion and the depletion of oxygen resources<span class="cite">(4-8)</span>. It is hypothesized that among the most critical sources of perceptual errors are the unique reflectance properties of the lunar surface and the absence of an Earth-like atmosphere on the Moon<span class="cite">(6,9)</span>. The lack of an atmosphere, or “exosphere” on the Moon causes dramatic changes in the scattering of light across the lunar surface and limits depth and distance perception of terrain<span class="cite">(10,8)</span>.</p>
+	<img src="moon1condensed.png" alt="" class="researchImg">
+	<div class="imgCredit">Image credit: NASA Apollo Archives</div>
+
+	<img src="moon2condensed.png" alt="" class="researchImg">
+	<div class="imgCaption">Panoramic images showing the dramatic changes in light scattering across lunar terrain.</div>
+	<div class="imgCredit">Image credit: NASA Apollo Archives</div>
+
+	<p>The lack of aerial (atmospheric) perspective on the Moon also limits the ability to differentiate distances between two landmarks. This increases the clarity of distant objects which make them appear much closer and caused many astronauts to underestimate distances to craters or hills during navigation<span class="cite">(10)</span>.</p>
+
+	<img src="moon3.png" alt="" class="researchImg">
+	<div class="imgCaption">Image depicting a lack of aerial perspective in discriminating the distance to the Mons Vitruvius (left) and the South Massif (right) in the Taurus-Littrow Valley from Apollo 17.</div>
+	<div class="imgCredit">Image credit: NASA Apollo Archives</div>
+
+	<img src="moon4.png" alt="" class="researchImg">
+	<div class="imgCaption">Apollo 17 image showing changes in brightness and contrast of lunar surface facing “up-sun” (left; image AS17-137-20879), “down-sun” (center; image AS17-147-22538), and “cross-sun” (right; AS17-137-20991)</div>
+	<div class="imgCredit">Image credit: NASA Apollo Archives</div>
+
+	<p>However, this benefit was often counteracted by deep shadows that limited depth perceptions of slope in low sun elevation. Astronaut Al Bean reported the formation of deep shadows that limited perception of depth and slope in low sun elevation, which caused him to overestimate an 11° slope of Surveyor Crater by almost 30° when it was partially concealed by shadows<span class="cite">(7, 10)</span>. The dramatic effects of sun elevation on the Moon are caused by the characteristic inconsistencies of light scattering in the exosphere which can dramatically change as a function of reflectance angle<span class="cite">(20)</span>. In varying degrees of sun elevation, this form of scattering can create the inverse effect of backscatter by creating an abnormal distribution of light across an object’s surface, causing light to refract in a different direction that does not reach the observer and concealing the object completely<span class="cite">(13)</span>.</p>
 
 
-<div class="jumbotron" style="background-image: url(spacepic.jpg); color: white;">
-  <h2 style="text-align: center;">
-Lunar Psychophysics Virtual Reality Lab <br> <br>
+	<img src="moon5.png" alt="" class="researchImg">
+	<div class="imgCaption">Deep shadows over terrain on lunar surface as a result in change of sun elevation.</div>
+	<div class="imgCredit">Image credit: NASA Apollo Archives</div>
 
-Research and Development 
-</h2>
-	<br> <br> <br>
-  <p style="text-align: center; margin-right: 120px; margin-left: 120px;"> <span style="font-weight: bold; ">Motivation</span><br>
-<p style="text-align: center; margin-right: 120px; margin-left: 120px; font-size: 18px;">
-Lunar psychophysics is a novel, interdisciplinary field of study that aims to resolve issues in perceptibility from the Apollo era with a multidimensional approach to determine human perceptual capabilities in lunar environments. Apollo astronauts faced many perceptual challenges while navigating the lunar surface, and the adverse effects of their sensory-perceptual errors were documented across multiple missions. Given recent changes to NASA’s plans for returning to the Moon in the 2020s <sup>(30)</sup>, understanding the sources of perceptual distortion on the Moon has important implications for astronauts. In preparation for future missions to the Moon, Mars and deep space asteroids, astronauts will experience prolonged exposure to unfamiliar stimuli during deep space explorations and in extraterrestrial planetary environments. 
+	<p>In the LPVR lab, Unity 3D VR renderings (image below) were created in 90° (left) 60° (middle) and 30° (right) sun elevation on the Moon to replicate the dramatic, abrupt changes in visibility experienced by Apollo astronauts (see image below).</p>
 
-Since the end of the Apollo program, experiments on the capabilities of the human visual system in space have been conducted in environments with which astronauts are most familiar, such as the Space Shuttle or International Space Station <sup>(11, 12)</sup>. This has benefitted the understanding of perception in microgravity within small, compartmentalized areas of space. However, there is limited knowledge on how the differential properties of light outside of Earth’s atmosphere affects human perception in extraterrestrial lunar environments. </p>
+	<img src="moon6.png" alt="" class="researchImg">
+	<div class="imgCaption">Top row (hill): Sun elevations at 90° (left), 60° (center), 30° (right) <br />
+	Bottom row (crater): Sun elevations at 90° (left), 60° (center), 30° (right) <br />
+	</div>
+	<div class="imgCredit">Image credit: LPVR Laboratory (2017)</div>
+
+</div>
+
+<!-- second -->
+
+<div class="wrapper" style="border: 1px solid #F5F5F5">
+
+	<h5>Psychophysics</h5>
+	<h6>What is Psychophysics?</h6>
+	<p>Psychophysics quantitatively investigates the relationship between physical stimuli and the sensations and perception they produce. It applies methodological approaches to study the human perceptual system via detection, identification, discrimination, and scaling. Modern applications rely heavily on threshold measurement, ideal observer analysis, and signal detection theory. The study of psychophysics has widespread and important practical applications for understanding human sensory perception. Research has identified nine essential sources of perceptual information that enable humans to accurately perceive depth and distance on Earth<span class="cite">(1-3)</span>.</p>
+	<br />
+  
+	<img src="moon7.png" alt="" class="researchImg">
+	<div class="imgCredit">Image credit: Nagata (1993).</div>
+	
+	<p>In essence, these sources of information are contingent upon the physical properties of Earth – an environment which enables a veridical and reliable source of visual cues for human perception (e.g. light, atmospheric density, gravity, texture, etc.). This is because certain physical and perceptual properties on Earth remain invariant, thereby allowing experimental studies to determine the detection threshold of physical stimuli such as light, sound and touch with great accuracy.</p>
+	
+</div>
+
+<!-- third -->
+
+<div class="wrapper" style="background-color: #F5F5F5;">
+  
+  <h5>Lunar Psychophysics</h5>
+  
+  <p>The underlying sources of sensory perception are derived from mechanisms in the neurological and physiological systems. Studying these functions has improved scientific understanding on how these mechanisms respond to physical changes in the external environment, as well as the perceptual distortions that result from such changes. However, it is uncertain whether humans possess the sensory capabilities to respond appropriately to new forms of stimuli outside of Earth without adaptation. It is with this foundation that serves as the basis for lunar psychophysics, which aims to transform current theoretical work into a “terrestrial” model and move towards the development of a universal theory of perceptual psychophysics.</p>
+  
+  <p><b><i>Lunar psychophysics</b></i> is a novel area of specialization in perceptual psychophysics, which considers a range of visual, neurological and physiological components in perception and their relationship to optical properties of light, particulate matter/surface reflectance, atmospheric physics and psychophysics on the Moon.</p>
+  
+	<img src="moon8.png" alt="" class="researchImg">
+	<div class="imgCredit">Image credit: Rahill (2017) LPVR Laboratory </div>
+	
+	<p>Initial studies will provide the theoretical basis of lunar psychophysics in considering the visual effects of atmospheric scattering (e.g. Rayleigh scattering and complex particle light scattering or CPLS 13, 14 ) and its relevance to James J. Gibson’s (1979) ecological theory in the structures of perception. Gibson’s (1979) approach identifies the environmental properties that are inherent to human perception on Earth and thus will serve as a framework for identifying the sources of perceptual distortion in a lunar environment.</p>
+	
+	<h6>Ecological Optics</h6>
+	<p>The fundamentals of lunar psychophysics from a neuro-physio perspective are derived from the original works of James J. Gibson (1979), who proposed an ecological approach to the structures of perception regarding the properties of light and the optic array. One unique assertion of Gibson’s theory is the notion that perception is a form of direct contact with the information contained within the optic array. Such that, perception is not a byproduct of intermediary sensory input that is an intrinsic representation in the mind of the perceiver. Rather, it proposes that perceptual information is intrinsic to the environment, and the most important perceptual stimulus within the environment is light<span class="cite">(15)</span>. Gibson (1979) claims that the properties of light can be changed based on the medium through which it is scattered through, thereby influencing the structure of light and the way it interacts with the environment. Without a medium, light is unstructured and thus will not reach the corresponding points on the retinal plane<span class="cite">(15, 16)</span>. Gibson does not directly reference to any theories of light scattering in his written propositions of light as the most important perceptible structure. However, his structural analysis of ambient light is similar to the intrinsic properties of Rayleigh scattering or an Earth-like atmosphere, where light is transmitted uniformly and the surfaces reflect it diffusely. It is with this atmospheric medium that light can possess certain invariant properties and carry information for perception.</p>
+	
+	<h6>Optic Flow Theory</h6>
+	<p>The study of lunar psychophysics is also rooted within Gibson’s (1950) theory of optic flow, which proposed the existence of a relationship between visual perception and underlying biological mechanisms of motion. Gibson’s theory of optic flow proposes that humans possess biological mechanisms that enable invariant features of perception. Humans have evolutionary mechanisms to interpret unstable sensory input which allows for a constant stable view of the world, and this is a result of changes in the flow of the optic array. The flow on the optic array provides essential information about motion through the environment; specifically, information about what type of movement (e.g. rotational or directional) is taking place<span class="cite">(17)</span>. The figure below refers to the three optic flow components, otherwise known as “particle flow fields,” which are afforded by invariant properties (i.e. light and surface reflectance) that contribute to motion perception in Earth environments.</p>
+	
+	<img src="moon9.png" alt="" class="researchImg">
+	<div class="imgCaption">A schematic representation of the different types of optic flow components which are afforded by invariant properties (light and surface reflectance) present in Earth environments: Radial rotation (left); Rotational motion (center); Translation (right);</div>
+	<div class="imgCredit">Image credit: Edwards et al. (2010) </div>
+	
+	<p>Gibson (1979) also claimed that any space filled with unstructured light (i.e. absence of an atmosphere and/or diffused reflectance across surfaces) is as devoid of information as a “fog-filled medium”<span class="cite">(3, 16)</span>. In theory, this assumption is in accordance with the structural integrity of a Rayleigh-like atmosphere, such that ambient light can emerge in dynamic, predictable interactions with the environment when the perceiver is in motion. </p>
+	
+	<p>The cues humans use to interpret this information are invariant features of the optic array, and this invariant information such as light and surface reflectance properties remain constant as the observer moves through an environment. However, the question of whether this information remains invariant outside of an environment which humans are ecologically bounded (Earth) has yet to be determined. In theory, observing a distortion of perceptual information due to changes in the properties of light during motion would provide evidence suggesting these perceptual sources of information are Earth-based and no longer invariant in extraterrestrial environments.</p>
+	
+	<h6>Physiological Optics</h6>
+	
+	<p>Gibson’s assumptions can be more fully elucidated when using physiological optics to understand the interactions between the human eye and the properties of light. Due to the anatomical structure of the human eye, different wavelengths of light affect different regions of the eye in different ways. In order to see, visible light must pass through the cornea and lens to form an image at the back of the eye on the retina. </p>
+	
+	<img src="moon10.png" alt="" class="researchImg">
+	<div class="imgCaption"></div>
+	<div class="imgCredit">Image credit: NPL.org<span class="cite">(31)</span></div>
+	
+	<p>However, light on either side of the visible spectrum and near infrared (i.e. ultraviolet, medium and far infrared) is absorbed at the front of the eye by the cornea and lens, and thus never reach the retina. This preemptive absorption can damage the front of your eye. However, an interesting feature of eye physiology is that the cornea and the lens can regenerate themselves from damage in a few days (obviously, depending on severity), whereas the retina cannot.</p>
+
+	<img src="moon12.jpg" alt="" class="researchImg">
+	<div class="imgCaption">The Spectral Response of The Human Eye</div>
+	<div class="imgCredit">Image credit: NPL.org<span class="cite">(31)</span> </div>
+	
+	<h6>How is this relevant to lunar psychophysics?</h6>
+	<p>Humans can only see light the on visible spectrum. In future space explorations, as humans move further outside of Earth’s magnetosphere, they will be continually exposed to the full spectrum of light and with greater intensity; the majority of which is normally filtered through Earth’s atmosphere before it reaches the human eye. Prolonged exposure could have negative, and perhaps irreversible effects on vision and perception. Thus, understanding the visual effects of light scattering on the Moon is the first step towards determining the extent to which humans can respond appropriately to dramatic changes in light beyond the visible spectrum in space.</p>
+	
+</div>
+<!-- -->
+
+<div class="wrapper" style="border: 1px solid #F5F5F5">
+  	
+	<h5>The Lunar Atmosphere</h5>
+	
+	<p>The presence of atomic and molecular particles is referred to as the Moon’s atmospheric medium; also called the “lunar atmosphere” or “exosphere”<span class="cite">(33)</span> . The lunar atmosphere consists of high energy photons and solar wind particles that create chemical reactions with evaporating material from the surface<span class="cite">(35)</span>. However, due to reduced gravity on the Moon (0.18g), the gases created from chemical interactions disperse from the lunar exosphere rather quickly and are spread out to the point where they rarely collide with one another<span class="cite">(34)</span>. </p>
+	
+	<img src="moon13.png" alt="" class="researchImg">
+	<div class="imgCredit">Image credit: NASA NLSI.</div>
+	
+	<p>On the Apollo missions, measuring the composition of the Moon’s atmosphere was difficult due to extreme heating and evaporation of surface experiments<span class="cite">(32)</span>. Thus, knowledge on the composition of the lunar atmosphere near the surface is often variable between findings<span class="cite">(33)</span>. One important consensus on the lunar atmosphere is its relative density, which is extremely thin compared to that of Earth’s. The density of the lunar atmosphere is only 100 molecules per cubic centimeter; whereas Earth's atmosphere at sea level has about 100 billion molecules per cubic centimeter<span class="cite">(33)</span>.</p>
+	</span>
+</div>
+
+<!-- -->
+
+<div class="wrapper" style="background-color: #F5F5F5;">
+
+	<h5>The Lunar Surface</h5>
+	
+	<h6>Lunar Dust</h6>
+	
+	<p>On the Moon, dust particles are dispersed approximately 1.5 meters above the surface due to a significant reduction in gravity<span class="cite">(15, 16)</span>. Dust particles in the exosphere consist of properties that create a less uniform distribution of reflectance across the surface, resulting in a different, complex form of light scattering<span class="cite">(23, 24)</span>. Evidence for this phenomenon comes from observations of the “lunar horizon glow”, which is thought to be produced by the scattering of sunlight by exospheric dust<span class="cite">(5, 13, 27)</span>. According to Tim Sharp (2012), these dust particles are described as, “microscopic cannon balls flying unimpeded on curved, ballistic trajectories that bounce across the lunar surface.” </p>
+	
+	<p>Recent observations of light scattering and lunar dust near the surface have identified a series of complex lunar dust particles (non-spherical grains that are non-uniform in composition) and can be used to virtually simulate the visual effects of light scattering on the Moon<span class="cite">(13)</span>. Richard and colleagues (2011) developed a model to examine the scattering properties of “virtual” lunar dust that incorporates a series of complex lunar dust particles (non-spherical grains that are non-uniform in composition) which can be used to simulate virtual conditions in which Mie scattering does and does not apply on the Moon. </p>
+	
+	<p>These virtual simulations have shown that the scattering of realistic lunar dust can be several times brighter than the typical range of Mie particles that have been historically modeled in the lunar exosphere. When the visual effects of these models are applied in Unity, this new VR model produces more visually accurate effects of light scattering observed on the Apollo missions<span class="cite">(13)</span>. Refer to the <b><i>Rendering Planetary Atmospheres</b></i> section for additional information.</p>
+	
+	<img src="moon14.png" alt="" class="researchImg">
+	<div class="imgCaption">Scanning electron micrographs of lunar dust grains from Apollo regolith samples (top row) and corresponding numerical models used for DDA computations (lower row).</div>
+	<div class="imgCredit">Image credit: Richard et al. (2011) </div>
+	
+	<h6>Reflectance Properties of Lunar Regolith</h6>
+	
+	<p>On Earth, Rayleigh scattering influences the appearance of reflectance properties on the surface objects, known as the Bi-directional Reflection Distribution Function (BRDF)<span class="cite">(10)</span>. The illumination of an Earth-like or “Lambertian” surface is directly proportional to the cosine of the angle of occurrence, which results in the scattering of light to be dispersed equally in all directions. Thus, a person viewing an object on a Lambertian surface would observe the same level of brightness across various objects in a scene, regardless of their orientation relative to the light source. </p>
+	
+	<p>Lambertian surfaces on Earth have characteristic properties such as layout, shape, texture, shading, composition and spectral reflectance<span class="cite">(3)</span>. The particolored terrain of Earth also causes surface colors to be commonly associated with specific kinds of surface compositions or textures. In the event the shape of an object results in varying degrees of reflectance on a Lambertian surface, an individual would then rely on visual cues such as shading, texture and color to perceive an object’s surface or 3D shape<span class="cite">(10)</span>.</p>
+
+	<img src="moon 15-2.png" alt="" class="researchImg">
+	<div class="imgCaption">Illustration of the brightness distribution model of light scattering on the surface of a Perfect Lambertian object (left), a Partial (varying degrees) Lambertian object (center), and a Non-Lambertian object (right). </div>
+	<div class="imgCredit">Image credit: Oravetz et al. (2011) </div>
+	
+	<p>The lunar regolith, however, has a distinct BDRF known as “Non-Lambertian” reflectance, which can cause dramatic changes in the scattering of light across the Moon’s surface. Lunar regolith is a layer of loose, fine grained material that includes dust, soil and broken rock on the Moon’s surface<span class="cite">(23)</span>. The surface of the Moon also lacks Lambertian spectral reflectance properties, causing the terrain to appear grey in color. </p>
+	
+	<p>The use of certain Lambertian characteristic properties as a visual reference for distance and depth on the Moon can be unreliable. This effect was documented by astronaut John Young, who reported having no visibility of nearby craters due to the abundance of light that washed out shadows of terrain, which would normally provide information about the size and appearance of objects and landmarks.</p>
+		
+
+</div>
+
+<!--  -->
+
+<div class="wrapper" style="border: 1px solid #F5F5F5">
+
+	<h5>Terrain Mapping in VR</h5>
+	<p>To create the most accurate representation of the unique reflectance properties on the lunar surface, an image of flat regolith on lunar terrain was mapped on VR terrain as a repeated texture. The terrain and textures were then modified using Perlin Noise, which is an extremely powerful algorithm that is used often in procedural content generation. Using this application, we were able to closely match the varying reflectance properties to simulate the visual effects of backscattering and deep shadows; creating an accurate visual depiction of lunar terrain as seen in Apollo images.</p>
+	
+	<img src="moon16.png" alt="" class="researchImg">
+	<div class="imgCaption"></div>
+	<div class="imgCredit">Left image: Unity 3D rendered image with lunar regolith texture mapping and Perlin Noise terrain generation<br/>
+	Right image: NASA Apollo Archives 
+	</div>
+
+</div>
+
+<!--  -->
+
+<div class="wrapper" style="background-color: #F5F5F5;">
+
+	<h5>Atmospheric Light Scattering Theory</h5>
+	<h6>Rayleigh Theory</h6>
+	<p>The atmospheric medium through which light is scattered on Earth consists of invariant properties that provide an optimal environment for veridical (direct or accurate) perception of physical stimuli. Earth’s atmosphere is constructed of unique properties that consist of a specific range of uniform size particles. The scattering of light occurs when light strikes a range of small, non-absorbing spherical particles, known as Rayleigh scatter, which results in the omnidirectional scattering of light across the surface<span class="cite">(19)</span>.</p>
+	
+	<img src="rayleigh.png" alt="" class="researchImg">
+	<div class="imgCaption"></div>
+	<div class="imgCredit">Image credit (left): Pearson Education (2011) <br />
+	Image credit (right): Sharayanan<span class="cite">(36)</span></div>
+	
+
+	<h6>Mie Theory</h6>
+	<p>Mie theory assumes the scatter of light can vary based on the size of particles, thus increasing in complexity. It accounts for a larger range of particles in the air that can possess different reflectance and absorbance properties. One example is the scattering of aerosols (such as dust and pollution).</p>
+
+	<img src="Mie.png" alt="" class="researchImg">
+	<div class="imgCaption"></div>
+	<div class="imgCredit">Image credit: http://apollo.lsc.vsc.edu </br> Image credit: Sharayanan<span class="cite">(36)</span></div>
+	
+	<p>On a hazy day, Mie scattering causes the sky to look a bit gray and causes the sun to have a large white halo around it. Mie scattering can also be used to simulate light scattered from small particles of water and ice in the air, to produce effects such as rainbows.</p>
+	
+	<p>Unlike Rayleigh theory, Mie assumes particles of much larger sizes, such as α = 10, creating scatter properties which are not uniformly distributed. In instances when all wavelengths of light are scattered equally, Mie scattering is occurring; hence why clouds appear white. The characterization of the scattering of sunlight which occurs on the Moon has been modeled using the theory of Mie scatter, due to the scattering of light in the vacuum of space<span class="cite">(27, 28)</span>, which will be discussed further in the Rendering Planetary Atmospheres section. A way to compare effects of Rayleigh and Mie scattering is to plot the degree of change in scatter properties based on the scattering angle of reflectance:</p>
+	
+	<img src="moon20.png" alt="" class="researchImg">
+	<div class="imgCaption"></div>
+	<div class="imgCredit">Image credit: Hahn (2009)</div>
+	
+	<p>In this plot, the 17 nm particle (α = 0.1) represents the minimum range (value of smallest possible particle) of particulate matter in the Rayleigh formula<span class="cite">(19)</span>. The 170 nm particle (α = 1.0) represents the maximum range (value of the largest possible particle) of particulate matter of the Rayleigh formula. Note that the 170 nm curve is showing some variation as the scattering angle increases towards 180°. However, this function variation does not increase nor decrease or beyond a certain range, thus creating a uniform distribution of light in Earth’s atmosphere. The 1.7 µm particle (α = 10) shows a dramatic “ripple” effect in scattering as a function of reflectance angle. This oscillation interference is characteristic of Mie scattering, which is due to the complex interactions in result of refracted rays, particle size and varying reflectance properties.</p>
+
+	<h6>Directional Light and the Observer</h6>
+	<p>A goal of lunar psychophysics is to apply the functions of atmospheric scattering to understand perceptual distortions by referencing the location of the light source and an object relative to the observer. This is because visibility can change based on the intensity and direction of light relative to the observer and further create inconsistencies in the visibility of an object’s surface features. Below is a conceptual illustration adapted from Nave (2005), showing perceptions of different hypothetical objects in the sky with different reflectance properties: Rayleigh (small particulate matter) and Mie (larger particulate matter).</p>
+	
+	<img src="moon21.png" alt="" class="researchImg">
+	<div class="imgCaption"></div>
+	<div class="imgCredit">Image credit: Nave (2005) illustration hyperphysics NASA GSU</div>
+	
+	<p>The two Rayleigh objects (blue dotted lines) objects illustrate a uniform distribution of reflectance that reaches the observer in a consistent, perceivable wavelength (blue)<span class="cite">(20)</span>. The two Mie objects (black lines) illustrate two different examples of the characteristic inconsistencies of Mie scatter that vary based on an object’s location relative to the observer. The triangulated position of an object’s relative location to the Sun and the observer can result in the forward scattering of light off an object, causing backscatter (bottom left). Or, it can result in the distributed illuminance of the second object (top right) causing light to refract in a different direction that does not reach the observer; concealing the object almost completely.</p>
+	
+</div>
+
+<!--  -->
+
+<div class="wrapper" style="border: 1px solid #F5F5F5">
+
+	<h5>Virtual Black Holes and Eclipses: The Mie(G) Function</h5>
+	
+	<p>In Unity 3D, altering the denominator of Mie(G) scattering function can result in the visual representation of other cosmic phenomena, such as “virtual” black holes. This is also similar to that of a solar eclipse, or a syzygy, where the disk of the sun is fully obscured by the Moon.</p>
+	
+	<img src="moon22.png" alt="" class="researchImg">
+	<img src="moon23.png" alt="" class="researchImg">
+	<div class="imgCaption"></div>
+	<div class="imgCredit">Image credit: Rahill (2017) LPVR Laboratory</div>
+
+	<p>These exploratory mathematical manipulations led to a pivotal discovery about Mie theory and its overall accuracy in modeling light scattering on the Moon. The characterization of the scattering of sunlight which occurs on the Moon has been modeled using the theory of Mie scatter<span class="cite">(27, 28)</span>. However, when Mie scattering coefficients were adjusted to “best fit” the visual representation of a lunar VE, it was discovered that the visual effects produced by Mie scatter models did not match lunar images from the Apollo missions with respect to brightness. This difference is due to the fundamental assumptions of Mie theory, and the transfer of these equations into VR simulations. Specifically, this is due to the complexity of particles sizes and shapes (non-spherical) in the lunar exosphere<span class="cite">(13)</span>. This is not accounted for in Mie calculations, for it only considers spherical particles of various sizes to exist in the atmosphere; refer to section on Lunar Exosphere for a table representation of these differences<span class="cite">(27)</span>.</p>
+
+</div>
+
+<!--  -->
+
+<div class="wrapper" style="background-color: #F5F5F5;">
+
+	<h5>Rendering Planetary Atmospheres</h5>
+	<p>To create a realistic, accurate representation of the visual effects of light scattering on Earth and the Moon, each of these VR models are further modified as needed by adjusting the following variables in Unity 3D: Rayleigh scatter/extinction coefficients, Mie Scatter/extinction coefficients, shaders, atmosphere height and density, sun elevation and intensity, density scale and height of terrain. Rayleigh and Mie scatter/extinction coefficients are used to model the visual lighting effects for each type of VE based on the theoretical frameworks of light scattering supported in the literature<span class="cite">(9,20)</span>. Adjustments were made to Rayleigh and Mie coefficients in Unity, as well as additional precomputed single-scattering equations to render different types of planetary atmospheres: Earth’s atmosphere (left), the lunar exosphere with CPLS properties (right), and a hypothetical rendering of an Earth-like atmosphere on the Moon (center).</p>
+	
+	<img src="moon24.png" alt="" class="researchImg">
+	<div class="imgCaption">Unity 3D rendering of an Earth-like "Rayleigh" atmosphere (left), a hypothetical rendering of an Earth-like atmosphere on the Moon (center) and a render of a lunar environment with CPLS properties (right).</div>
+	<div class="imgCredit">Image credit: Rahill (2017) LPVR Laboratory </div>
+
+	<p>Generating an accurate visual representation of atmospheric scattering in computer graphics models (CGM) is challenging, and understanding these equations is crucial for rendering realistic environments. Since the equations used explain atmospheric light scattering are extremely complex, CGM models generally use simplified equations. The scattering equations have nested integrals that are impossible to solve analytically. Fortunately, we can numerically compute the value of an integral with techniques such as the trapezoid rule, as suggested by O’Neil (2005)<span class="cite">(26)</span>; who proposed the implementation of full scattering equations to model an atmosphere more accurately and at lower densities.</p>
+
+	<p>Using a line segment on a graph, one can break up the segment into n sample segments and evaluate the integrand at the center point of each sample segment. Then, multiply each result by the length of the sample segment and add them all up. Increasing the number of n samples makes the result more accurate, but it also makes the process of calculating the integral more taxing. In our case, the line segment is a ray from the VR camera through the atmosphere to a vertex (B). This vertex can take on any perspective in the environment. It can be part of the terrain, an object, part of the sky dome, part of a cloud, or even part of an object in space such as the Moon. If the ray passes through an atmosphere to get to the vertex, scattering needs to be calculated. Every ray should have two points defined that mark where the ray starts passing through the atmosphere and where it stops passing through the atmosphere. These points can be called A and B in the figure below<span class="cite">(26)</span>. When the camera is inside the atmosphere, A is the camera's position. When the vertex is inside the atmosphere, B is the vertex's position. When either point is in space, we perform a sphere-intersection check to find out where the ray intersects the outer atmosphere, and then we make the intersection point A or B.</p>
+
+	<img src="moon25.jpg" alt="" class="researchImg">
+	
+	<p>Now that we have a line segment defined from point A → B, we want to approximate the integral that describes the atmospheric scattering across the segment length. In the figure above, five sample positions are selected and labeled points P 1 through P 5. Each (P) point represents a point in the atmosphere at which light scatters; light comes into the atmosphere from the sun, scatters at that point, and is reflected toward the camera in the VE.</p>
+
+	<p>Consider the point P 5, for example. Sunlight goes directly from the sun to P 5 in a straight line. Along that line the atmosphere scatters some of the light away from P 5. At P 5, some of this light is scattered directly toward the camera. As the light from P 5 travels to the camera, it is partially scattered away again. Another important detail is related to how the light scattering at the point P is modeled. Different particles in the atmosphere scatter light in different ways, hence the most common forms of scattering are Rayleigh and Mie scattering and extinction coefficients.</p>
+	
+	<p>The 4 main equations used to simulate atmospheric light scattering are below<span class="cite">(26)</span>:</p>
+	
+	<h6><center>The Phase Function</center></h6>
+	<img src="eq1.png.jpg" alt="" class="researchImg">	
+	<p>The phase function describes how much light is scattered toward the direction of the camera based on the angle (the angle between the two green rays in figure above) and a constant g that affects the symmetry of the scattering. There are many different versions of the phase function. This one is an adaptation of the Henyey-Greenstein function used in Nishita et al. 1993.</p>
+
+	<h6><center>Out-Scattering Equation</center></h6>
+	<img src="eq2.jpg" alt="" class="researchImg">
+	<p>The out-scattering equation is the inner integral. This part determines the "optical depth," or the average atmospheric density across the ray from point P<span class="subscript">a</span> to point P<span class="subscript">b</span> multiplied by the length of the ray. This is also called the "optical length" or "optical thickness." Think of it as a weighting factor based on how many air particles are in the path of the light along the ray. The rest of the equation is made up of constants, and they determine how much of the light those particles scatter away from the ray.</p>
+	
+	<h6><center>In-Scattering Equation</center></h6>
+	<img src="eq3.png" alt="" class="researchImg">
+	<p>The in-scattering equation describes how much light is added to a ray through the atmosphere due to light scattering from the sun. For each point P along the ray from P<span class="subscript">a</span> to P<span class="subscript">b</span> , PP<span class="subscript">c</span> is the ray from the point to the sun and PP<span class="subscript">a</span> is the ray from the sample point to the camera. The out-scattering function determines how much light is scattered away along the two green rays seen in the geometric figure above. The remaining light is scaled by the phase function, the scattering constant, and the intensity of the sunlight, I<span class="subscript">s</span> (). The sunlight intensity does not have to be dependent on wavelength, but this is where you would apply the color if you wanted to create an extraterrestrial planetary environment revolving around a different colored star.</p>
+	
+	<h6><center>Surface-Scattering Equation</center></h6>
+	<img src="eq4.jpg" alt="" class="researchImg">
+	<p>To scatter light reflected from a surface, such as the surface of a planet, you must take into account the fact that some of the reflected light will be scattered away on its way to the camera. In addition, extra light is scattered in from the atmosphere. I<span class="subscript">e</span> () is the amount of light emitted or reflected from a surface, and it is attenuated by an out-scattering factor. The sky is not a surface that can reflect or emit light, so only I<span class="subscript">v</span> () is needed to render the sky. Determining how much light is reflected or emitted by a surface is application-specific, but for reflected sunlight, you need to account for the out-scattering that takes place before the sunlight strikes the surface (that is, I<span class="subscript">s</span> () x exp(-t(P<span class="subscript">c</span> P<span class="subscript">b</span> ,))), and use that as the color of the light when determining how much light the surface reflects<span class="cite">(26)</span>.</p>
+		
+</div>
+
+<!-- References -->
+
+<div class="wrapper" style="border: 1px solid #F5F5F5">
+
+	<h5>References</h5>
+	<div class="references">
+		<p>Nagata, S. (1996). The binocular fusion of human vision on stereoscopic displays—field of view and environment effects. Ergonomics, 39(11), 1273-1284.</p>
+		<p>Cutting, J. E. (1997). How the eye measures reality and virtual reality. Behavior Research Methods, Instruments & Computers, 29(1), 27-36. doi: 10.3758/bf03200563.</p>
+		<p>Gibson, J. J. (1979). The ecological approach to visual perception. Perception.</p>
+		<p>Sawabe, Y., Matsunaga, T., & Rokugawa, S. (2006). Automated detection and classification of lunar craters using multiple approaches. Advances in Space Research, 37(1), 21-27.</p>
+		<p>Zook, H. A., & McCoy, J. E. (1991). Large scale lunar horizon glow and a high altitude lunar dust exosphere. Geophysical Research Letters, 18(11), 2117-2120.</p>
+		<p>Young, L. R., Liu, A. M., & Oravetz, C. T. (2008, June). Lunar Slope and Distance Estimation. In ESA Special Publication (Vol. 663).</p>
+		<p>Heiken, G. & Jones, E. (2007). On the Moon: the Apollo Journals. Chichester, UK: Praxis.</p>
+		<p>Seminara, J. L., & Kincaid Jr, W. K. (1969). Control task performance in the lunar visual environment. Aerospace medicine, 40(4), 397.</p>
+		<p>McCartney, E. J. (1976). Optics of the atmosphere: scattering by molecules and particles. New York, John Wiley and Sons, Inc. 421, 1-20.</p>
+		<p>Oravetz, C.T., Young, L.R, & Liu, A.M (2011). Slope, distance and height estimation of lunar and lunar-like terrain in a virtual reality environment. Gravitational and Space Biology, 22(2), 57-67.</p>
+		<p>Clement, G., Loureiro, N., Sousa, D., & Zandvliet, A. (2016). Perception of Egocentric Distance during Gravitational Changes in Parabolic Flight. Journal of the Public Library of Science, 11(7), 1-11. doi: 10.1371/journal.pone.0159422.</p>
+		<p>Clément, G., Skinner, A., & Lathan, C. (2013). Distance and size perception in astronauts during long-duration spaceflight. Life, 3(4), 524-537.</p>
+		<p>Richard, D. T., Glenar, D. A., Stubbs, T. J., Davis, S. S., & Colaprete, A. (2011). Light scattering by complex particles in the Moon’s exosphere: Toward a taxonomy of models for the realistic simulation of the scattering behavior of lunar dust. Planetary and Space Science, 59(14), 1804-1814.</p>
+		<p>Davis, S., Marshall, J., Richard, D., Adler, D., & Adler, B. (2014). Scattering properties of lunar dust analogs. Planetary and Space Science, 90, 28-36.</p>
+		<p>Reed, E. S. (1988). James J. Gibson and the psychology of perception. Yale University Press.</p>
+		<p>Braund, M. J. (2008). The structures of perception: An ecological perspective. Kritike: An Online Journal of Philosophy, 2(1), 123-144.</p>
+		<p>Gibson, J. J. (1950). The perception of visual surfaces. The American Journal of Psychology, 63(3), 367-384. doi: 0.2307/1418003.</p>
+		<p>Edwards, M., O'Mahony, S., Ibbotson, M. R., & Kohlhagen, S. (2010). Vestibular stimulation affects optic-flow sensitivity. Perception, 39(10), 1303-1310.</p>
+		<p>Hahn, D. W. (2006). Light scattering theory. Department of Mechanical and Aerospace Engineering, Florida.</p>
+		<p>Nave, C. (2005, August 12). HyperPhysics: Blue Sky and Rayleigh Scattering. Retrieved January 11, 2017, from http://hyperphysics.phy-astr.gsu.edu/Hbase/atmos/blusky.html.</p>
+		<p>Davis, S., Marshall, J., Richard, D., Adler, D., & Adler, B. (2014). Scattering properties of lunar dust analogs. Planetary and Space Science, 90, 28-36.</p>
+		<p>Helfenstein, P., Veverka, J., & Hillier, J. (1997). The lunar opposition effect: A test of alternative models. Icarus, 128(1), 2-14.</p>
+		</div>
+	</div>
+
+</div>
 
 </div>
 
 
+<!-- Footer Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->  
 
-<section id="missions" style="margin-bottom: 120px;">
-	<div style="margin-right: 120px; margin-left: 120px;">
-		<h1 style="text-align: center;"> Apollo Missons </h1>
+<footer style="background-color: black;">
+  <div class="container">
+    <div class="nine columns">
+      <p> Lunar Psychophysics Virtual Reality Lab - 2018 </p>
+    </div>
+    <div class="three columns"> <span class="typcn typcn-social-facebook-circular socialIcons"></span> <span class="typcn typcn-social-instagram-circular socialIcons"></span> <span class="typcn typcn-social-google-plus-circular socialIcons"></span> <span class="typcn typcn-social-linkedin-circular socialIcons"></span> </div>
+  </div>
+</footer>
 
-<p align="left"> Upon landing on the Moon, the Apollo astronauts encountered an environment where the visual-sensory cues used for depth and distance perception on Earth were no longer reliable. Astronauts significantly underestimated the sizes of craters, hill slopes and distances to landmarks. Many faced unanticipated challenges when traversing lunar terrain, such as physical overexertion and the depletion of oxygen resources <sup>(4-8)</sup>.
-It is hypothesized that among the most critical sources of perceptual errors are the unique reflectance properties of the lunar surface and the absence of an Earth-like atmosphere on the Moon <sup>(6,9)</sup>. The lack of an atmosphere, or “exosphere” on the Moon causes dramatic changes in the scattering of light across the lunar surface and limits depth and distance perception of terrain <sup>(10,8)</sup>.</p>
-		
-	<p align="center"> <img src="moon1condensed.png" style="height: 125px; width: 896px;"> 
-	<br> <b> Image credit: </b> NASA Apollo Archives </p>
-			<br>
-			<br>
-	<p align="center"> <img src="moon2condensed.png" style="height: 125px; width: 896px;">
-	<br> <i> Panoramic images showing the dramatic changes in light scattering across lunar terrain.</i>
-	<br> <b> Image credit: </b> NASA Apollo Archives </p>
-		
-	<p align="left">  The lack of aerial (atmospheric) perspective on the Moon also limits the ability to differentiate distances between two landmarks. This increases the clarity of distant objects which make them appear much closer and caused many astronauts to underestimate distances to craters or hills during navigation <sup>(10)</sup>. </p>
-	<p align="center"> <img src="moon3.png" style="height: 339px; width: 598px;"> 
-	<br> <i> Image depicting a lack of aerial perspective in discriminating the distance to the Mons Vitruvius (left) and the South Massif (right) in the Taurus-Littrow Valley from Apollo 17.</i> 
-		<br> <b> Image credit: </b> NASA Apollo Archives </p>
-			<br>
-        <p align="center"> <img src="moon4.png" style="height: 250px; width: 600px; text-align: center;">
-	<br> <b> Image credit </b>: NASA Apollo Archives 
-	<br> <i> Apollo 17 image showing changes in brightness and contrast of lunar surface facing <b>“up-sun”</b> (left; image AS17-137-20879), <b>“down-sun”</b> (center; image AS17-147-22538), and <b>“cross-sun”</b> (right; AS17-137-20991)</i></p>
-		 <br>
-<p align="left"> However, this benefit was often counteracted by deep shadows that limited depth perceptions of slope in low sun elevation. Astronaut Al Bean reported the formation of deep shadows that limited perception of depth and slope in low sun elevation, which caused him to overestimate an 11° slope of Surveyor Crater by almost 30° when it was partially concealed by shadows <sup>(7, 10)</sup>.
-
-The dramatic effects of sun elevation on the Moon are caused by the characteristic inconsistencies of light scattering in the exosphere which can dramatically change as a function of reflectance angle <sup>(20)</sup>. In varying degrees of sun elevation, this form of scattering can create the inverse effect of backscatter by creating an abnormal distribution of light across an object’s surface, causing light to refract in a different direction that does not reach the observer and concealing the object completely <sup>(13)</sup>.
-</p>
-	<p align="center"> <img src="moon5.png" style="height: 300px; width: 550px; text-align: center;"> 
-	<br> <i>Deep shadows over terrain on lunar surface as a result in change of sun elevation. </i>
-	<br> <b> Image credit:</b> NASA Apollo Archives </p>
-
-<p align="left"> In the LPVR lab, Unity 3D VR renderings (image below) were created in 90° (left) 60° (middle) and 30° (right) sun elevation on the Moon to replicate the dramatic, abrupt changes in visibility experienced by Apollo astronauts (see image below).</p> 
+<script type="text/javascript">
 	
-	<p align="center"> <img src="moon6.png" style="height: 350px; width: 550px; text-align: center;"> 
-	<br> <i> <b> Top row (hill): </b> Sun elevations at 90° (left), 60° (center), 30° (right)
-	<br> <b> Bottom row (crater): </b> Sun elevations at 90° (left), 60° (center), 30° (right) </i>  
-	<br> <b> Image credit:</b> LPVR Laboratory (2017) </p>
-
-</div>
-</section>
-
-
-
-<section id="psychophysics" style="margin-top: 60; margin-bottom: 60px; border-top: 1px solid black; padding-top: 30px;">
-
-	<div style="margin-right: 120px; margin-left: 120px;">
-		<h1 style="text-align: center; margin-bottom: 40px;"> Psychophysics</h1>
-		
-			<div style="text-align: left;" style="margin-bottom: 40px;">
-				 <b> <i>What is Psychophysics?</i> </b>
-		<p> Psychophysics quantitatively investigates the relationship between physical stimuli and the sensations and perception they produce. It applies methodological approaches to study the human perceptual system via detection, identification, discrimination, and scaling. Modern applications rely heavily on threshold measurement, ideal observer analysis, and signal detection theory. The study of psychophysics has widespread and important practical applications for understanding human sensory perception. Research has identified nine essential sources of perceptual information that enable humans to accurately perceive depth and distance on Earth <sup>(1-3)</sup>. </p> </div> 
-
-<p align="center"> <img src="moon7.png" style="height: 411px; width: 748px; text-align: center;"> </p> 
-	<p align="center"> <b> Image credit:</b> Nagata (1993).
-
-<div style="text-align: left;" style="margin-bottom: 40px;">
-<p> In essence, these sources of information are contingent upon the physical properties of Earth – an environment which enables a veridical and reliable source of visual cues for human perception (e.g. light, atmospheric density, gravity, texture, etc.). This is because certain physical and perceptual properties on Earth remain invariant, thereby allowing experimental studies to determine the detection threshold of physical stimuli such as light, sound and touch with great accuracy.</p>
-
-
-   </div>
-
-</section>
-
-
-<section id="lunar" style="margin-top: 60; margin-bottom: 60px; border-top: 1px solid black; padding-top: 30px;">
-
-	<div style="margin-right: 120px; margin-left: 120px;">
-		<h1 style="text-align: center; margin-bottom: 40px;"> Lunar Psychophysics</h1>
-		
-			<div style="text-align: left;" style="margin-bottom: 40px;">
-		<p> The underlying sources of sensory perception are derived from mechanisms in the neurological and physiological systems. Studying these functions has improved scientific understanding on how these mechanisms respond to physical changes in the external environment, as well as the perceptual distortions that result from such changes. However, it is uncertain whether humans possess the sensory capabilities to respond appropriately to new forms of stimuli outside of Earth without adaptation. It is with this foundation that serves as the basis for lunar psychophysics, which aims to transform current theoretical work into a “terrestrial” model and move towards the development of a universal theory of perceptual psychophysics. 
-<br> <br>
-<b> <i> Lunar psychophysics </i> </b> is a novel area of specialization in perceptual psychophysics, which considers a range of visual, neurological and physiological components in perception and their relationship to optical properties of light, particulate matter/surface reflectance, atmospheric physics and psychophysics on the Moon. </p> 
-										   
-<p align="center"> <img src="moon8.png" style="height: 290px; width: 598px; text-align: center;"> </p> 
-														
-<p align="center"> <b>Image credit:</b> Rahill (2017) LPVR Laboratory <br> 
-											     
-<p> Initial studies will provide the theoretical basis of lunar psychophysics in considering the visual effects of atmospheric scattering (e.g. Rayleigh scattering and complex particle light scattering or CPLS <sup> 13, 14 </sup>) and its relevance to James J. Gibson’s (1979) ecological theory in the structures of perception. Gibson’s (1979) approach identifies the environmental properties that are inherent to human perception on Earth and thus will serve as a framework for identifying the sources of perceptual distortion in a lunar environment. </p>
-											     
-
-				<b> Ecological Optics </b>
-
-<p> The fundamentals of lunar psychophysics from a neuro-physio perspective are derived from the original works of James J. Gibson (1979), who proposed an ecological approach to the structures of perception regarding the properties of light and the optic array. One unique assertion of Gibson’s theory is the notion that perception is a form of direct contact with the information contained within the optic array. Such that, perception is not a byproduct of intermediary sensory input that is an intrinsic representation in the mind of the perceiver. Rather, it proposes that perceptual information is intrinsic to the environment, and the most important perceptual stimulus within the environment is light <sup> (15) </sup>.
-
-Gibson (1979) claims that the properties of light can be changed based on the medium through which it is scattered through, thereby influencing the structure of light and the way it interacts with the environment. Without a medium, light is unstructured and thus will not reach the corresponding points on the retinal plane <sup> (15, 16) </sup>.  Gibson does not directly reference to any theories of light scattering in his written propositions of light as the most important perceptible structure. However, his structural analysis of ambient light is similar to the intrinsic properties of Rayleigh scattering or an Earth-like atmosphere, where light is transmitted uniformly and the surfaces reflect it diffusely. It is with this atmospheric medium that light can possess certain invariant properties and carry information for perception. </p>
-
-
-				 <b> Optic Flow Theory </b> 
-
-<p> The study of lunar psychophysics is also rooted within Gibson’s (1950) theory of optic flow, which proposed the existence of a relationship between visual perception and underlying biological mechanisms of motion. Gibson’s theory of optic flow proposes that humans possess biological mechanisms that enable invariant features of perception. Humans have evolutionary mechanisms to interpret unstable sensory input which allows for a constant stable view of the world, and this is a result of changes in the flow of the optic array. 
-
-The flow on the optic array provides essential information about motion through the environment; specifically, information about what type of movement (e.g. rotational or directional) is taking place <sup>(17)</sup>. The figure below refers to the three optic flow components, otherwise known as “particle flow fields,” which are afforded by invariant properties (i.e. light and surface reflectance) that contribute to motion perception in Earth environments.</p>
-											     
-<p align="center"> <img src="moon9.png" style="height: 174px; width: 592px; text-align: center;"> </p> 
-<p align="center"> <b>Image credit:</b> Edwards et al. (2010) <br>
-<i/> A schematic representation of the different types of optic flow components which are afforded by invariant properties (light and surface reflectance) present in Earth environments: Radial rotation (left); Rotational motion (center); Translation (right); </i> </p> 
-
-
-<p> Gibson (1979) also claimed that any space filled with unstructured light (i.e. absence of an atmosphere and/or diffused reflectance across surfaces) is as devoid of information as a “fog-filled medium” <sup>(3, 16)</sup>.  In theory, this assumption is in accordance with the structural integrity of a Rayleigh-like atmosphere, such that ambient light can emerge in dynamic, predictable interactions with the environment when the perceiver is in motion.
-<br>
-The cues humans use to interpret this information are invariant features of the optic array, and this invariant information such as light and surface reflectance properties remain constant as the observer moves through an environment. However, the question of whether this information remains invariant outside of an environment which humans are ecologically bounded (Earth) has yet to be determined. In theory, observing a distortion of perceptual information due to changes in the properties of light during motion would provide evidence suggesting these perceptual sources of information are Earth-based and no longer invariant in extraterrestrial environments. </p>
-
-	 <b> Physiological Optics </b> 
-									     
-<p> Gibson’s assumptions can be more fully elucidated when using physiological optics to understand the interactions between the human eye and the properties of light. Due to the anatomical structure of the human eye, different wavelengths of light affect different regions of the eye in different ways. In order to see, visible light must pass through the cornea and lens to form an image at the back of the eye on the retina.
-<br>
-
-	<p align="center"> <img src="moon10.png" style="height: 276px; width: 480px; text-align: center;"> </p> 
-			<p align="center"> <b>Image credit: </b> NPL.org <sup> (31) </sup> </p>
-
-
-<p> However, light on either side of the visible spectrum and near infrared (i.e. ultraviolet, medium and far infrared) is absorbed at the front of the eye by the cornea and lens, and thus never reach the retina. This preemptive absorption can damage the front of your eye. However, an interesting feature of eye physiology is that the cornea and the lens can regenerate themselves from damage in a few days (obviously, depending on severity), whereas the retina cannot. </p>
-
-	<p align="center"> <img src="moon12.jpg" style="height: 372px; width: 598px; text-align: center;">
-	<br> <b>Image credit: </b> NPL.org <sup> (31) </sup> 
-	<br> <i> The Spectral Response of The Human Eye </i> </p> 
-				<br>
-
-				 <i> <b> How is this relevant to lunar psychophysics? </b> </i>
-
-<p> Humans can only see light the on visible spectrum. In future space explorations, as humans move further outside of Earth’s magnetosphere, they will be continually exposed to the full spectrum of light and with greater intensity; the majority of which is normally filtered through Earth’s atmosphere before it reaches the human eye. Prolonged exposure could have negative, and perhaps irreversible effects on vision and perception. Thus, understanding the visual effects of light scattering on the Moon is the first step towards determining the extent to which humans can respond appropriately to dramatic changes in light beyond the visible spectrum in space. </p> 
-									      
-   </div>
-											   									     
-
-</section>
-
-
-
-<section id="exosphere" style="margin-top: 60; margin-bottom: 60px; border-top: 1px solid black; padding-top: 30px;">
-
-	<div style="margin-right: 120px; margin-left: 120px;">
-							   
-		<h1 style="text-align: center; margin-bottom: 40px;"> The Lunar Exosphere</h1>
-			<div style="text-align: left;" style="margin-bottom: 40px;">
-										     
-<p> The presence of atomic and molecular particles is referred to as the Moon’s atmospheric medium; also called the “lunar atmosphere” or “exosphere” <sup> (33) </sup>. The lunar atmosphere consists of high energy photons and solar wind particles that create chemical reactions with evaporating material from the surface <sup>(35)</sup>. However, due to reduced gravity on the Moon (0.18g), the gases created from chemical interactions disperse from the lunar exosphere rather quickly and are spread out to the point where they rarely collide with one another <sup>(34)</sup>. 
-<br>
-	<p align="center"> <img src="moon13.png" style="height: 294px; width: 400px; text-align: center;"> 
-			<br> <b> Image credit: </b> NASA NLSI. </p>
-				<br>
-On the Apollo missions, measuring the composition of the Moon’s atmosphere was difficult due to extreme heating and evaporation of surface experiments <sup> (32)</sup>. Thus, knowledge on the composition of the lunar atmosphere near the surface is often variable between findings <sup>(33)</sup>. One important consensus on the lunar atmosphere is its relative density, which is extremely thin compared to that of Earth’s. The density of the lunar atmosphere is only 100 molecules per cubic centimeter; whereas Earth's atmosphere at sea level has about 100 billion molecules per cubic centimeter <sup>(33)</sup>. </p>     
-<br>
-
-		
-	</div>			
- 
-</section>
-
-
-
-
-<section id="surface" style="margin-top: 60; margin-bottom: 60px; border-top: 1px solid black; padding-top: 30px;">
-
-	<div style="margin-right: 120px; margin-left: 120px;">
-		<h1 style="text-align: center; margin-bottom: 40px;"> The Lunar Surface</h1>
-		
-		 <p align="left"> <b> Lunar Dust </b> </p>
-									<br>
-
-<p> On the Moon, dust particles are dispersed approximately 1.5 meters above the surface due to a significant reduction in gravity <sup> (15, 16) </sup>. Dust particles in the exosphere consist of properties that create a less uniform distribution of reflectance across the surface, resulting in a different, complex form of light scattering (23, 24). Evidence for this phenomenon comes from observations of the “lunar horizon glow”, which is thought to be produced by the scattering of sunlight by exospheric dust <sup> (5, 13, 27) </sup>. According to Tim Sharp (2012), these dust particles are described as, <i> “microscopic cannon balls flying unimpeded on curved, ballistic trajectories that bounce across the lunar surface.” </i> 
-<br>
-
-Recent observations of light scattering and lunar dust near the surface have identified a series of complex lunar dust particles (non-spherical grains that are non-uniform in composition) and can be used to virtually simulate the visual effects of light scattering on the Moon <sup> (13) </sup>.  Richard and colleagues (2011) developed a model to examine the scattering properties of “virtual” lunar dust that incorporates a series of complex lunar dust particles (non-spherical grains that are non-uniform in composition) which can be used to simulate virtual conditions in which Mie scattering does and does not apply on the Moon.  
-<br>
-These virtual simulations have shown that the scattering of realistic lunar dust can be several times brighter than the typical range of Mie particles that have been historically modeled in the lunar exosphere. When the visual effects of these models are applied in Unity, this new VR model produces more visually accurate effects of light scattering observed on the Apollo missions <sup> (13) </sup>. Refer to the <i> <b> Rendering Planetary Atmospheres </b> </i> section for additional information. </p>
-
-	<div style="text-align: center;" style="margin-bottom: 40px; margin-top: 40px;">
-										       
-	<p align="center"> <img src="moon14.png" style="height: 262px; width: 598px; text-align: center;"> 
-		<br> <b> Image credit: </b> Richard et al. (2011) 
-<br> <i> Scanning electron micrographs of lunar dust grains from Apollo regolith samples (top row) and corresponding numerical models used for DDA computations (lower row) </i>.  
-</p> 
-		<br>
-											      
-		 <p align="left"> <b> Reflectance Properties of Lunar Regolith </b> </p> </p>
-		<br>
-<p align="left"> On Earth, Rayleigh scattering influences the appearance of reflectance properties on the surface objects, known as the Bi-directional Reflection Distribution Function (BRDF) <sup> (10) </sup>. The illumination of an Earth-like or “Lambertian” surface is directly proportional to the cosine of the angle of occurrence, which results in the scattering of light to be dispersed equally in all directions. Thus, a person viewing an object on a Lambertian surface would observe the same level of brightness across various objects in a scene, regardless of their orientation relative to the light source. 
-<br>
-Lambertian surfaces on Earth have characteristic properties such as layout, shape, texture, shading, composition and spectral reflectance <sup> (3) </sup>. The particolored terrain of Earth also causes surface colors to be commonly associated with specific kinds of surface compositions or textures. In the event the shape of an object results in varying degrees of reflectance on a Lambertian surface, an individual would then rely on visual cues such as shading, texture and color to perceive an object’s surface or 3D shape <sup> (10) </sup>. </p>  
-
-<p align="center"> <img src="Moon 15-2.png" style="height: 123px; width: 426px; text-align: center;"> 
-<br> <b> Image credit: </b> Oravetz et al. (2011)
-	<br ><i >Illustration of the brightness distribution model of light scattering on the surface of a Perfect Lambertian object (left), a Partial (varying degrees) Lambertian object (center), and a Non-Lambertian object (right). </i> 
-		<br> 
-		<br>
-<p align="left"> The lunar regolith, however, has a distinct BDRF known as “Non-Lambertian” reflectance, which can cause dramatic changes in the scattering of light across the Moon’s surface. Lunar regolith is a layer of loose, fine grained material that includes dust, soil and broken rock on the Moon’s surface <sup> (23) </sup>. The surface of the Moon also lacks Lambertian spectral reflectance properties, causing the terrain to appear grey in color. 
-<br>
-The use of certain Lambertian characteristic properties as a visual reference for distance and depth on the Moon can be unreliable. This effect was documented by astronaut John Young, who reported having no visibility of nearby craters due to the abundance of light that washed out shadows of terrain, which would normally provide information about the size and appearance of objects and landmarks. </p> 
-
-		</div>		
-
-</section>
-
-
-
-
-<section id="vr" style="margin-top: 60; margin-bottom: 60px; border-top: 1px solid black; padding-top: 30px;">
-
-	<div style="margin-right: 120px; margin-left: 120px;">
-		<h1 style="text-align: center; margin-bottom: 40px;"> Terrain Mapping in VR</h1>
-	<div style="text-align: center;" style="margin-bottom: 40px;"></div>	
-								     
-<p align="left"> To create the most accurate representation of the unique reflectance properties on the lunar surface, an image of flat regolith on lunar terrain was mapped on VR terrain as a repeated texture. The terrain and textures were then modified using Perlin Noise, which is an extremely powerful algorithm that is used often in procedural content generation. Using this application, we were able to closely match the varying reflectance properties to simulate the visual effects of backscattering and deep shadows; creating an accurate visual depiction of lunar terrain as seen in Apollo images. </p>			    
-<br>
-		<p align="center"> <img src="Moon16.png" style="height: 216px; width: 598px; text-align: center;"> 
-		<br> <b> Right image: </b> NASA Apollo Archives
-		<br> <b> Left image: </b> Unity 3D rendered image with lunar regolith texture mapping and Perlin Noise terrain generation </p>
-
-				
-
-</section>
-
-
-
-<section id="light" style="margin-top: 60; margin-bottom: 60px; border-top: 1px solid black; padding-top: 30px;">
-
-	<div style="margin-right: 120px; margin-left: 120px;">
-		<h1 style="text-align: center; margin-bottom: 40px;"> Atmospheric Light Scattering Theory</h1>
-		
-								    
-		<p align="left"> <b> Rayleigh Theory </b> </p>
-The atmospheric medium through which light is scattered on Earth consists of invariant properties that provide an optimal environment for veridical (direct or accurate) perception of physical stimuli. Earth’s atmosphere is constructed of unique properties that consist of a specific range of uniform size particles. The scattering of light occurs when light strikes a range of small, non-absorbing spherical particles, known as Rayleigh scatter, which results in the omnidirectional scattering of light across the surface <sup> (19) </sup>.</p>
-	
-<p align="center"> <img src="rayleigh.png" style="height: 538px; width: 538px="float:left;"> 
-	<br> <b> Image credit (left): </b> Pearson Education (2011) 
-	<br> <b> Image credit (right): </b> Sharayanan <sup> (36) </sup> </p> 
-
-
-<p align="left"> The criteria for Rayleigh scattering requires that particle sizes range from α = 0.1-1.0; creating a refractive index that is less than 1. This creates scatter properties (intensity, direction) that provide a uniform distribution across a medium comprised of shorter wavelengths, creating the blue color which is dominant in Earth’s atmosphere. This illumination effect created by Rayleigh scatter in Earth’s atmosphere is referred to as “diffuse sky radiation” which gives the sky its blue color, as it scatters light more heavily at shorter wavelengths (blue first, then green, and then red). It is also responsible for the Sun’s yellow hue <sup> (20) </sup>. The sun’s light turns yellow/orange/red at sunset because as light travels far through the atmosphere, and the majority of blue and green wavelengths are scattered away before it reaches the human eye. </p>
-	      
-	
-	
-	<p align="left"> <b> Mie Theory </b> </p>
-Mie theory assumes the scatter of light can vary based on the size of particles, thus increasing in complexity. It accounts for a larger range of particles in the air that can possess different reflectance and absorbance properties. One example is the scattering of aerosols (such as dust and pollution). </p> 
-		
-	<p align="center"> <img src="Mie.png" style="height: 450px; width: 598px="float:left;">  
-	<br> <b> Image credit: </b> http://apollo.lsc.vsc.edu 
-	<br> <b> Image credit: </b> Sharayanan <sup> (36) </sup> </p>
-	
-<p align="left"> On a hazy day, Mie scattering causes the sky to look a bit gray and causes the sun to have a large white halo around it. Mie scattering can also be used to simulate light scattered from small particles of water and ice in the air, to produce effects such as rainbows. </p> 
-	<br>
-											      
-<p align="left"> Unlike Rayleigh theory, Mie assumes particles of much larger sizes, such as α = 10, creating scatter properties which are not uniformly distributed. In instances when all wavelengths of light are scattered equally, Mie scattering is occurring; hence why clouds appear white. The characterization of the scattering of sunlight which occurs on the Moon has been modeled using the theory of Mie scatter, due to the scattering of light in the vacuum of space <sup> (27, 28) </sup> , which will be discussed further in the Rendering Planetary Atmospheres section. 
-A way to compare effects of Rayleigh and Mie scattering is to plot the degree of change in scatter properties based on the scattering angle of reflectance: </p> 
-									      
-	<p align="center"> <img src="moon20.png" style="height: 419px; width: 598px; text-align: center;"> 
-		<br> 
-		<b> Image credit: </b> Hahn (2009) </p> 
-		
-										       
-<p align="left"> In this plot, the 17 nm particle (α = 0.1) represents the minimum range (value of smallest possible particle) of particulate matter in the Rayleigh formula <sup> (19) </sup>. The 170 nm particle (α = 1.0) represents the maximum range (value of the largest possible particle) of particulate matter of the Rayleigh formula. Note that the 170 nm curve is showing some variation as the scattering angle increases towards 180°. However, this function variation does not increase nor decrease or beyond a certain range, thus creating a uniform distribution of light in Earth’s atmosphere. The 1.7 µm particle (α = 10) shows a dramatic “ripple” effect in scattering as a function of reflectance angle. This oscillation interference is characteristic of Mie scattering, which is due to the complex interactions in result of refracted rays, particle size and varying reflectance properties. </p> 
-										       								
- 
-<h3 style="text-align: center; margin-bottom: 40px;"> Directional Light and the Observer</h3>
-	<p align="left"> A goal of lunar psychophysics is to apply the functions of atmospheric scattering to understand perceptual distortions by referencing the location of the light source and an object relative to the observer. This is because visibility can change based on the intensity and direction of light relative to the observer and further create inconsistencies in the visibility of an object’s surface features. Below is a conceptual illustration adapted from Nave (2005), showing perceptions of different hypothetical objects in the sky with different reflectance properties: Rayleigh (small particulate matter) and Mie (larger particulate matter). </p> 
-<br>
-<p align="center"> <img src="moon21.png" style="height: 412px; width: 598px; text-align: center;"> 
-	<br> <p align="center"> <b> Image credit: </b> Nave (2005) illustration hyperphysics NASA GSU
-								  
-<p> The two Rayleigh objects (blue dotted lines) objects illustrate a uniform distribution of reflectance that reaches the observer in a consistent, perceivable wavelength (blue) <sup>(20)</sup>. The two Mie objects (black lines) illustrate two different examples of the characteristic inconsistencies of Mie scatter that vary based on an object’s location relative to the observer. The triangulated position of an object’s relative location to the Sun and the observer can result in the forward scattering of light off an object, causing backscatter (bottom left). Or, it can result in the distributed illuminance of the second object (top right) causing light to refract in a different direction that does not reach the observer; concealing the object almost completely. </p> 
-	
-
-   </div>
-
-</section>
-
-
-
-<section id="black" style="margin-top: 60; margin-bottom: 60px; border-top: 1px solid black; padding-top: 30px;">
-
-	<div style="margin-right: 120px; margin-left: 120px;">
-		<h1 style="text-align: center; margin-bottom: 40px;"> Virtual Black Holes and Eclipses: The Mie(G) Function</h1> 
-								    
-
-<p> In Unity 3D, altering the denominator of Mie(G) scattering function can result in the visual representation of other cosmic phenomena, such as “virtual” black holes. This is also similar to that of a solar eclipse, or a syzygy, where the disk of the sun is fully obscured by the Moon. </p> 
-							   
-	<p align="center"> <img src="moon22.png" style="height: 335px; width: 598px; text-align: center;"> 
-<br>		<br> <img src="moon23.png" style="height: 364px; width: 598px; text-align: center;"> 
-		<br> <b> Image credit: </b> Rahill (2017) LPVR Laboratory </p> 
-<br>
-
-<p align="left"> These exploratory mathematical manipulations led to a pivotal discovery about Mie theory and its overall accuracy in modeling light scattering on the Moon. The characterization of the scattering of sunlight which occurs on the Moon has been modeled using the theory of Mie scatter  <sup>(27, 28)</sup>. However, when Mie scattering coefficients were adjusted to “best fit” the visual representation of a lunar VE, it was discovered that the visual effects produced by Mie scatter models did not match lunar images from the Apollo missions with respect to brightness. 
-							    
-This difference is due to the fundamental assumptions of Mie theory, and the transfer of these equations into VR simulations. Specifically, this is due to the complexity of particles sizes and shapes (non-spherical) in the lunar exosphere <sup>(13)</sup>. This is not accounted for in Mie calculations, for it only considers spherical particles of various sizes to exist in the atmosphere; refer to section on Lunar Exosphere for a table representation of these differences <sup>(27)</sup>. </p> </div>
-
-
-   </div>
-
-</section>
-
-
-<section id="planet" style="margin-top: 60; margin-bottom: 60px; border-top: 1px solid black; padding-top: 30px;">
-
-	<div style="margin-right: 120px; margin-left: 120px;">
-		<h1 style="text-align: center; margin-bottom: 40px;"> Rendering Planetary Atmospheres</h1>
-
-
-<p align="left"> To create a realistic, accurate representation of the visual effects of light scattering on Earth and the Moon, each of these VR models are further modified as needed by adjusting the following variables in Unity 3D: Rayleigh scatter/extinction coefficients, Mie Scatter/extinction coefficients, shaders, atmosphere height and density, sun elevation and intensity, density scale and height of terrain. 
-
-Rayleigh and Mie scatter/extinction coefficients are used to model the visual lighting effects for each type of VE based on the theoretical frameworks of light scattering supported in the literature <sup>(9,20)</sup>. Adjustments were made to Rayleigh and Mie coefficients in Unity, as well as additional precomputed single-scattering equations to render different types of planetary atmospheres: Earth’s atmosphere (left), the lunar exosphere with CPLS properties (right), and a hypothetical rendering of an Earth-like atmosphere on the Moon (center). </p> 
-
-		<p align="center"> <img src="moon24.png" style="height: 113px; width: 598px; text-align: center;"> 
-		<br> <b> Image credit: </b> Rahill (2017) LPVR Laboratory 
-		<br> <i> Unity 3D rendering of an Earth-like "Rayleigh" atmosphere (left), a hypothetical rendering of an Earth-like atmosphere on the Moon (center) and a render of a lunar environment with CPLS properties (right). </i> </p>
-		
-<p> Generating an accurate visual representation of atmospheric scattering in computer graphics models (CGM) is challenging, and understanding these equations is crucial for rendering realistic environments. Since the equations used explain atmospheric light scattering are extremely complex, CGM models generally use simplified equations. The scattering equations have nested integrals that are impossible to solve analytically. Fortunately, we can numerically compute the value of an integral with techniques such as the trapezoid rule, as suggested by O’Neil (2005) <sup>(26)</sup>; who proposed the implementation of full scattering equations to model an atmosphere more accurately and at lower densities.</p> 
-
-
-<p> Using a line segment on a graph, one can break up the segment into n sample segments and evaluate the integrand at the center point of each sample segment. Then, multiply each result by the length of the sample segment and add them all up. Increasing the number of n samples makes the result more accurate, but it also makes the process of calculating the integral more taxing. 
-
-											      In our case, the line segment is a ray from the VR camera through the atmosphere to a vertex (B). This vertex can take on any perspective in the environment. It can be part of the terrain, an object, part of the sky dome, part of a cloud, or even part of an object in space such as the Moon. If the ray passes through an atmosphere to get to the vertex, scattering needs to be calculated. Every ray should have two points defined that mark where the ray starts passing through the atmosphere and where it stops passing through the atmosphere. These points can be called A and B in the figure below (26). When the camera is inside the atmosphere, A is the camera's position. When the vertex is inside the atmosphere, B is the vertex's position. When either point is in space, we perform a sphere-intersection check to find out where the ray intersects the outer atmosphere, and then we make the intersection point A or B.</p> 
- 
-<p align="center"> <img src="moon25.jpg" style="height: 117px; width: 500px; text-align: center;"> </p> 
-		
-
-	<p> Now that we have a line segment defined from point A → B, we want to approximate the integral that describes the atmospheric scattering across the segment length. In the figure above, five sample positions are selected and labeled points P 1 through P 5. Each (P) point represents a point in the atmosphere at which light scatters; light comes into the atmosphere from the sun, scatters at that point, and is reflected toward the camera in the VE. </p> 
- 
-
-	<p> Consider the point P 5, for example. Sunlight goes directly from the sun to P 5 in a straight line. Along that line the atmosphere scatters some of the light away from P 5. At P 5, some of this light is scattered directly toward the camera. As the light from P 5 travels to the camera, it is partially scattered away again. Another important detail is related to how the light scattering at the point P is modeled. Different particles in the atmosphere scatter light in different ways, hence the most common forms of scattering are Rayleigh and Mie scattering and extinction coefficients.</p> 
-
-	<p align="center"> The 4 main equations used to simulate atmospheric light scattering are below <sup> (26) </sup>:</p>
-
-		<p align="center"> <b> The Phase Function </b></p> 
-
-	<p align="center"> <img src="eq1.png.jpg" style="height: 80px; width: 500px; text-align: center;"> </p> 
-										
-<p> The phase function describes how much light is scattered toward the direction of the camera based on the angle (the angle between the two green rays in figure above) and a constant g that affects the symmetry of the scattering. There are many different versions of the phase function. This one is an adaptation of the Henyey-Greenstein function used in Nishita et al. 1993. </p>
-				       
-		 <p align="center"> <b> Out-Scattering Equation </b> </p> 
-
-	<p align="center"> <img src="eq2.jpg" style="height: 89px; width: 502px; text-align: center;"> </p>
-										       
-<p> The out-scattering equation is the inner integral. This part determines the "optical depth," or the average atmospheric density across the ray from point P<sub>a</sub> to point P<sub>b</sub> multiplied by the length of the ray. This is also called the "optical length" or "optical thickness." Think of it as a weighting factor based on how many air particles are in the path of the light along the ray. The rest of the equation is made up of constants, and they determine how much of the light those particles scatter away from the ray. </p>
-
-		<p align="center"> <b> In-Scattering Equation </b> </p> 
-
-		<p align="center"> <img src="eq3.png" style="height: 43px; width: 500px; text-align: center;"> </p>
-				
-<p> The in-scattering equation describes how much light is added to a ray through the atmosphere due to light scattering from the sun. For each point P along the ray from P<sub>a</sub> to P<sub>b</sub> , PPc is the ray from the point to the sun and PP<sub>a</sub> is the ray from the sample point to the camera. The out-scattering function determines how much light is scattered away along the two green rays seen in the geometric figure above. The remaining light is scaled by the phase function, the scattering constant, and the intensity of the sunlight, I<sub>s</sub> (). The sunlight intensity does not have to be dependent on wavelength, but this is where you would apply the color if you wanted to create an extraterrestrial planetary environment revolving around a different colored star. </p> 
-
-	<p align="center"> <b> Surface-Scattering Equation </b> </p> 
-
-		<p align="center"> <img src="eq4.png" style="height: 42px; width: 374px; text-align: center;"> </p> 
-
-<p> To scatter light reflected from a surface, such as the surface of a planet, you must take into account the fact that some of the reflected light will be scattered away on its way to the camera. In addition, extra light is scattered in from the atmosphere. I<sub>e</sub> () is the amount of light emitted or reflected from a surface, and it is attenuated by an out-scattering factor. The sky is not a surface that can reflect or emit light, so only I<sub>v</sub> () is needed to render the sky. Determining how much light is reflected or emitted by a surface is application-specific, but for reflected sunlight, you need to account for the out-scattering that takes place before the sunlight strikes the surface (that is, Is () x exp(-t(P<sub>c</sub> P<sub>b</sub> ,))), and use that as the color of the light when determining how much light the surface reflects <sup>(26)</sup>. </p>
-
-								      
-
-
-   </div>
-
-</section>
-
-
-
-
-<section id="references" style="margin-top: 60; margin-bottom: 60px; border-top: 1px solid black; padding-top: 30px;">
-
-	<div style="margin-right: 120px; margin-left: 120px;">
-		<h1 style="text-align: center; margin-bottom: 40px;"> References</h1>
-	
-<p> Nagata, S. (1996). The binocular fusion of human vision on stereoscopic displays—field of view and environment effects. Ergonomics, 39(11), 1273-1284.</p>
-<p> Cutting, J. E. (1997). How the eye measures reality and virtual reality. Behavior Research Methods, Instruments & Computers, 29(1), 27-36. doi: 10.3758/bf03200563.</p>
-<p> Gibson, J. J. (1979). The ecological approach to visual perception. Perception.</p>
-<p> Sawabe, Y., Matsunaga, T., & Rokugawa, S. (2006). Automated detection and classification of lunar craters using multiple approaches. Advances in Space Research, 37(1), 21-27.</p>
-<p> Zook, H. A., & McCoy, J. E. (1991). Large scale lunar horizon glow and a high altitude lunar dust exosphere. Geophysical Research Letters, 18(11), 2117-2120. </p>
-<p> Young, L. R., Liu, A. M., & Oravetz, C. T. (2008, June). Lunar Slope and Distance Estimation. In ESA Special Publication (Vol. 663).</p>
-<p> Heiken, G. & Jones, E. (2007). On the Moon: the Apollo Journals. Chichester, UK: Praxis. </p>
-<p> Seminara, J. L., & Kincaid Jr, W. K. (1969). Control task performance in the lunar visual environment. Aerospace medicine, 40(4), 397.</p>
-<p> McCartney, E. J. (1976). Optics of the atmosphere: scattering by molecules and particles. New York, John Wiley and Sons, Inc. 421, 1-20. </p>
-<p> Oravetz, C.T., Young, L.R, & Liu, A.M (2011). Slope, distance and height estimation of lunar and lunar-like terrain in a virtual reality environment. Gravitational and Space Biology, 22(2), 57-67. </p>
-<p> Clement, G., Loureiro, N., Sousa, D., & Zandvliet, A. (2016). Perception of Egocentric Distance during Gravitational Changes in Parabolic Flight. Journal of the Public Library of Science, 11(7), 1-11. doi: 10.1371/journal.pone.0159422.</p>
-<p> Clément, G., Skinner, A., & Lathan, C. (2013). Distance and size perception in astronauts during long-duration spaceflight. Life, 3(4), 524-537.</p>
-<p> Richard, D. T., Glenar, D. A., Stubbs, T. J., Davis, S. S., & Colaprete, A. (2011). Light scattering by complex particles in the Moon’s exosphere: Toward a taxonomy of models for the realistic simulation of the scattering behavior of lunar dust. Planetary and Space Science, 59(14), 1804-1814.</p>
-<p> Davis, S., Marshall, J., Richard, D., Adler, D., & Adler, B. (2014). Scattering properties of lunar dust analogs. Planetary and Space Science, 90, 28-36.</p>
-<p> Reed, E. S. (1988). James J. Gibson and the psychology of perception. Yale University Press.</p>
-<p> Braund, M. J. (2008). The structures of perception: An ecological perspective. Kritike: An Online Journal of Philosophy, 2(1), 123-144.</p>
-<p> Gibson, J. J. (1950). The perception of visual surfaces. The American Journal of Psychology, 63(3), 367-384. doi: 0.2307/1418003.</p>
-<p> Edwards, M., O'Mahony, S., Ibbotson, M. R., & Kohlhagen, S. (2010). Vestibular stimulation affects optic-flow sensitivity. Perception, 39(10), 1303-1310.</p>
-<p> Hahn, D. W. (2006). Light scattering theory. Department of Mechanical and Aerospace Engineering, Florida.</p>
-<p> Nave, C. (2005, August 12). HyperPhysics: Blue Sky and Rayleigh Scattering. Retrieved January 11, 2017, from http://hyperphysics.phy-astr.gsu.edu/Hbase/atmos/blusky.html.</p>
-<p> Davis, S., Marshall, J., Richard, D., Adler, D., & Adler, B. (2014). Scattering properties of lunar dust analogs. Planetary and Space Science, 90, 28-36.</p>
-<p> Helfenstein, P., Veverka, J., & Hillier, J. (1997). The lunar opposition effect: A test of alternative models. Icarus, 128(1), 2-14. </p>
-
-
-
-
-   </div>
-
-</section>
-
+function fade($ele) {
+    $ele.fadeIn(1000).delay(3000).fadeOut(1000, function() {
+        var $next = $(this).next('.quote');
+        fade($next.length > 0 ? $next : $(this).parent().children().first());
+   });
+}
+fade($('.quoteLoop > .quote').first());
+
+
+/*----------------------------------------------------*/
+/* Navigation
+------------------------------------------------------ */
+
+$(window).scroll(function() {
+
+    if ($(window).scrollTop() > 300) {
+        $('.main_nav').addClass('sticky');
+    } else {
+        $('.main_nav').removeClass('sticky');
+    }
+});
+
+// Mobile Navigation
+$('.mobile-toggle').click(function() {
+    if ($('.main_nav').hasClass('open-nav')) {
+        $('.main_nav').removeClass('open-nav');
+    } else {
+        $('.main_nav').addClass('open-nav');
+    }
+});
+
+$('.main_nav li a').click(function() {
+    if ($('.main_nav').hasClass('open-nav')) {
+        $('.navigation').removeClass('open-nav');
+        $('.main_nav').removeClass('open-nav');
+    }
+});
+
+
+/*----------------------------------------------------*/
+/* Smooth Scrolling
+------------------------------------------------------ */
+
+jQuery(document).ready(function($) {
+
+   $('.smoothscroll').on('click',function (e) {
+	    e.preventDefault();
+
+	    var target = this.hash,
+	    $target = $(target);
+
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 800, 'swing', function () {
+	        window.location.hash = target;
+	    });
+	});
+  
+});
+
+
+TweenMax.staggerFrom(".heading", 0.8, {opacity: 0, y: 20, delay: 0.2}, 0.4);
+
+</script>
 
 
 </body>
+
+
 </html>
