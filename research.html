@@ -193,12 +193,13 @@ However, light on either side of the visible spectrum and near infrared (i.e. ul
 		<h1 style="text-align: center; margin-bottom: 40px;"> The Lunar Exosphere</h1>
 			<div style="text-align: center;" style="margin-bottom: 40px;">
 										     
-<p> The presence of atomic and molecular particles is referred to as the Moon’s atmospheric medium; also called the “lunar atmosphere” or “exosphere” (33). The lunar atmosphere consists of high energy photons and solar wind particles that create chemical reactions with evaporating material from the surface (35). However, due to reduced gravity on the Moon (0.18g), the gases created from chemical interactions disperse from the lunar exosphere rather quickly and are spread out to the point where they rarely collide with one another (34). 
-
-On the Apollo missions, measuring the composition of the Moon’s atmosphere was difficult due to extreme heating and evaporation of surface experiments (32). Thus, knowledge on the composition of the lunar atmosphere near the surface is often variable between findings (33). One important consensus on the lunar atmosphere is its relative density, which is extremely thin compared to that of Earth’s. The density of the lunar atmosphere is only 100 molecules per cubic centimeter; whereas Earth's atmosphere at sea level has about 100 billion molecules per cubic centimeter (33). </p>     
-
+<p> The presence of atomic and molecular particles is referred to as the Moon’s atmospheric medium; also called the “lunar atmosphere” or “exosphere” <sup> (33) </sup>. The lunar atmosphere consists of high energy photons and solar wind particles that create chemical reactions with evaporating material from the surface <sup>(35)</sup>. However, due to reduced gravity on the Moon (0.18g), the gases created from chemical interactions disperse from the lunar exosphere rather quickly and are spread out to the point where they rarely collide with one another <sup>(34)</sup>. 
+<br>
+On the Apollo missions, measuring the composition of the Moon’s atmosphere was difficult due to extreme heating and evaporation of surface experiments <sup> (32)</sup>. Thus, knowledge on the composition of the lunar atmosphere near the surface is often variable between findings <sup>(33)</sup>. One important consensus on the lunar atmosphere is its relative density, which is extremely thin compared to that of Earth’s. The density of the lunar atmosphere is only 100 molecules per cubic centimeter; whereas Earth's atmosphere at sea level has about 100 billion molecules per cubic centimeter <sup>(33)</sup>. </p>     
+<br>
 
 		<img src="moon13.png" style="height: 294px; width: 400px; text-align: center;"> 
+				<br> <b> Image credit: </b> NASA NLSI. 
 	</div>			
  
 </section>
@@ -213,27 +214,32 @@ On the Apollo missions, measuring the composition of the Moon’s atmosphere was
 		
 								    <b> Lunar Dust </b> 
 
-<p> On the Moon, dust particles are dispersed approximately 1.5 meters above the surface due to a significant reduction in gravity (15, 16). Dust particles in the exosphere consist of properties that create a less uniform distribution of reflectance across the surface, resulting in a different, complex form of light scattering (23, 24). Evidence for this phenomenon comes from observations of the “lunar horizon glow”, which is thought to be produced by the scattering of sunlight by exospheric dust (5, 13, 27). According to Tim Sharp (2012), these dust particles are described as, “microscopic cannon balls flying unimpeded on curved, ballistic trajectories that bounce across the lunar surface.”
-
-Recent observations of light scattering and lunar dust near the surface have identified a series of complex lunar dust particles (non-spherical grains that are non-uniform in composition) and can be used to virtually simulate the visual effects of light scattering on the Moon (13).  Richard and colleagues (2011) developed a model to examine the scattering properties of “virtual” lunar dust that incorporates a series of complex lunar dust particles (non-spherical grains that are non-uniform in composition) which can be used to simulate virtual conditions in which Mie scattering does and does not apply on the Moon.  
-
-These virtual simulations have shown that the scattering of realistic lunar dust can be several times brighter than the typical range of Mie particles that have been historically modeled in the lunar exosphere. When the visual effects of these models are applied in Unity, this new VR model produces more visually accurate effects of light scattering observed on the Apollo missions (13). Refer to the Rendering Planetary Atmospheres section for additional information. </p>
+<p> On the Moon, dust particles are dispersed approximately 1.5 meters above the surface due to a significant reduction in gravity <sup> (15, 16) </sup>. Dust particles in the exosphere consist of properties that create a less uniform distribution of reflectance across the surface, resulting in a different, complex form of light scattering (23, 24). Evidence for this phenomenon comes from observations of the “lunar horizon glow”, which is thought to be produced by the scattering of sunlight by exospheric dust <sup> (5, 13, 27) </sup>. According to Tim Sharp (2012), these dust particles are described as, <i> “microscopic cannon balls flying unimpeded on curved, ballistic trajectories that bounce across the lunar surface.” </i> 
+<br>
+Recent observations of light scattering and lunar dust near the surface have identified a series of complex lunar dust particles (non-spherical grains that are non-uniform in composition) and can be used to virtually simulate the visual effects of light scattering on the Moon <sup> (13) </sup>.  Richard and colleagues (2011) developed a model to examine the scattering properties of “virtual” lunar dust that incorporates a series of complex lunar dust particles (non-spherical grains that are non-uniform in composition) which can be used to simulate virtual conditions in which Mie scattering does and does not apply on the Moon.  
+<vr>
+These virtual simulations have shown that the scattering of realistic lunar dust can be several times brighter than the typical range of Mie particles that have been historically modeled in the lunar exosphere. When the visual effects of these models are applied in Unity, this new VR model produces more visually accurate effects of light scattering observed on the Apollo missions <sup> (13) </sup>. Refer to the <i> <b> Rendering Planetary Atmospheres section for additional information. </i> </b> </p>
 
 	<div style="text-align: center;" style="margin-bottom: 40px; margin-top: 40px;">
 										       
-		<p align="center"> <img src="moon14.png" style="height: 262px; width: 598px; text-align: center;"> </p> 
+	<p align="center"> <img src="moon14.png" style="height: 262px; width: 598px; text-align: center;"> 
+		<br> <b> Image credit: </b> Richard et al. (2011) 
+<br> <i> Scanning electron micrographs of lunar dust grains from Apollo regolith samples (top row) and corresponding numerical models used for DDA computations (lower row) </i>.  
+</p> 
 		<br>
 											      
-											      <b> Reflectance Properties of Lunar Regolith </b>
+		<p align="left"> <b> Reflectance Properties of Lunar Regolith </b> </p>
+		<br>
+<p> On Earth, Rayleigh scattering influences the appearance of reflectance properties on the surface objects, known as the Bi-directional Reflection Distribution Function (BRDF) <sup> (10) </sup>. The illumination of an Earth-like or “Lambertian” surface is directly proportional to the cosine of the angle of occurrence, which results in the scattering of light to be dispersed equally in all directions. Thus, a person viewing an object on a Lambertian surface would observe the same level of brightness across various objects in a scene, regardless of their orientation relative to the light source. 
+<br>
+Lambertian surfaces on Earth have characteristic properties such as layout, shape, texture, shading, composition and spectral reflectance <sup> (3) </sup>. The particolored terrain of Earth also causes surface colors to be commonly associated with specific kinds of surface compositions or textures. In the event the shape of an object results in varying degrees of reflectance on a Lambertian surface, an individual would then rely on visual cues such as shading, texture and color to perceive an object’s surface or 3D shape <sup> (10) </sup>. </p>  
 
-<p> On Earth, Rayleigh scattering influences the appearance of reflectance properties on the surface objects, known as the Bi-directional Reflection Distribution Function (BRDF) (10). The illumination of an Earth-like or “Lambertian” surface is directly proportional to the cosine of the angle of occurrence, which results in the scattering of light to be dispersed equally in all directions. Thus, a person viewing an object on a Lambertian surface would observe the same level of brightness across various objects in a scene, regardless of their orientation relative to the light source. 
-
-Lambertian surfaces on Earth have characteristic properties such as layout, shape, texture, shading, composition and spectral reflectance (3). The particolored terrain of Earth also causes surface colors to be commonly associated with specific kinds of surface compositions or textures. In the event the shape of an object results in varying degrees of reflectance on a Lambertian surface, an individual would then rely on visual cues such as shading, texture and color to perceive an object’s surface or 3D shape (10). </p>  
-
-	<img src="Moon 15-2.png" style="height: 123px; width: 426px; text-align: center;"> 
-											
-<p> The lunar regolith, however, has a distinct BDRF known as “Non-Lambertian” reflectance, which can cause dramatic changes in the scattering of light across the Moon’s surface. Lunar regolith is a layer of loose, fine grained material that includes dust, soil and broken rock on the Moon’s surface (23). The surface of the Moon also lacks Lambertian spectral reflectance properties, causing the terrain to appear grey in color. 
-
+	<p align="center"> <img src="Moon 15-2.png" style="height: 123px; width: 426px; text-align: center;"> 
+<br> <i >Illustration of the brightness distribution model of light scattering on the surface of a Perfect Lambertian object (left), a Partial (varying degrees) Lambertian object (center), and a Non-Lambertian object (right). </i> 
+		<br> <b> Image credit: </b> Oravetz et al. (2011)
+		<br>
+<p> The lunar regolith, however, has a distinct BDRF known as “Non-Lambertian” reflectance, which can cause dramatic changes in the scattering of light across the Moon’s surface. Lunar regolith is a layer of loose, fine grained material that includes dust, soil and broken rock on the Moon’s surface <sup> (23) </sup>. The surface of the Moon also lacks Lambertian spectral reflectance properties, causing the terrain to appear grey in color. 
+<br>
 The use of certain Lambertian characteristic properties as a visual reference for distance and depth on the Moon can be unreliable. This effect was documented by astronaut John Young, who reported having no visibility of nearby craters due to the abundance of light that washed out shadows of terrain, which would normally provide information about the size and appearance of objects and landmarks. </p> 
 
 		</div>		
@@ -250,9 +256,13 @@ The use of certain Lambertian characteristic properties as a visual reference fo
 	<div style="text-align: center;" style="margin-bottom: 40px;">
 								     
 <p> To create the most accurate representation of the unique reflectance properties on the lunar surface, an image of flat regolith on lunar terrain was mapped on VR terrain as a repeated texture. The terrain and textures were then modified using Perlin Noise, which is an extremely powerful algorithm that is used often in procedural content generation. Using this application, we were able to closely match the varying reflectance properties to simulate the visual effects of backscattering and deep shadows; creating an accurate visual depiction of lunar terrain as seen in Apollo images. </p>			    
-
+<br>
 		<img src="Moon16.png" style="height: 216px; width: 598px; text-align: center;"> 
-	</div>			
+		<p align="center"> <b> Right image: </b> NASA Apollo Archives
+		<br>
+		<b> Left image: </b> Unity 3D rendered image with lunar regolith texture mapping and Perlin Noise terrain generation
+
+		</div>			
 
 </section>
 
